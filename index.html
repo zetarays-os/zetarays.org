@@ -383,6 +383,14 @@
   .flinks{display:flex; gap:22px; flex-wrap:wrap; font-size:13px}
   .flinks a{color:var(--ink-dim); text-decoration:none}
   .flinks a:hover{color:var(--accent)}
+  /* GitHub: simbolo + testo, discreto, nel colore dei link */
+  .gh-link{display:inline-flex; align-items:center; gap:7px; color:var(--ink-dim); text-decoration:none}
+  .gh-link:hover{color:var(--accent)}
+  .gh-link .gh{width:15px; height:15px; flex:none}
+  .gh-riga{margin-top:10px}
+  .gh-riga .gh-link{font-family:var(--mono); font-size:13px; letter-spacing:.02em;
+    border:1px solid var(--line-2); border-radius:9px; padding:7px 13px}
+  .gh-riga .gh-link:hover{border-color:var(--accent)}
 
   /* --- modulo di contatto ---
      Non invia nulla da solo: compone un messaggio e apre il programma di posta
@@ -652,10 +660,10 @@
           Dopo il download controlla che il file sia arrivato intero. Il codice qui sotto deve corrispondere esattamente. Su Windows: <code>Get-FileHash .\file.iso -Algorithm SHA256</code> · su macOS: <code>shasum -a 256 file.iso</code> · su Linux: <code>sha256sum file.iso</code>. Se non corrisponde il file è incompleto: scaricalo di nuovo e non installarlo.
         </p>
         <table>
-          <tr><td class="f">amd64.iso</td><td class="h">2d75880f6d40df1cca1e5799a0b60f21c0dd40ed6ae75b16185f67ebc7ad7845</td></tr>
-          <tr><td class="f">amd64.ova</td><td class="h">b52f93eaab9d0fcd0adee0244657e20099ccc2a3c92bdea1dd4b4aa03aeee33f</td></tr>
-          <tr><td class="f">arm64.iso</td><td class="h">b4856b9328fe4402b0a3e38fe0c1d2b934c2da765da9996f0526931615cdca9a</td></tr>
-          <tr><td class="f">arm64.ova</td><td class="h">7f587d5baa901a8bc70fa58a5fdfac258772ad8802d5c0b27a074713736426be</td></tr>
+          <tr><td class="f">amd64.iso</td><td class="h">c5fb8b82506ab6f88b7a446efaa7a8bc1b07cf8ccaa8da4c9768bdd17b10e1f3</td></tr>
+          <tr><td class="f">amd64.ova</td><td class="h">8c4e7a999859dc4c7511b1a2d5090cf03a0881de0bb14da008b347a1ba1fe642</td></tr>
+          <tr><td class="f">arm64.iso</td><td class="h">ec36e53dfcd2bcd05d6e6b655e255750517dcc0b3a9f5efbbe77df5ac318ffe7</td></tr>
+          <tr><td class="f">arm64.ova</td><td class="h">bdfbcd0a5e304a6a45a939056ed6d5b092a07ea206a2c9c2501f9464f1aa541b</td></tr>
         </table>
         <p style="margin:14px 0 0" data-en="The same codes are in <a class=&quot;sums&quot; href=&quot;SHA256SUMS&quot;>SHA256SUMS</a>, ready for <code>sha256sum -c SHA256SUMS</code>.">
           Gli stessi codici sono nel file <a class="sums" href="SHA256SUMS">SHA256SUMS</a>, pronto per <code>sha256sum -c SHA256SUMS</code>.
@@ -664,6 +672,7 @@
     </details>
     <p class="creds" data-en="First login: user <b>zeta</b> · password <b>zeta</b>">Primo accesso: utente <b>zeta</b> · password <b>zeta</b></p>
     <p class="creds" data-en="Full instructions (installing, dual boot, Wi-Fi, troubleshooting, known limits): <a class=&quot;doc&quot; href=&quot;README.txt&quot;>README.txt</a>">Istruzioni complete (installazione, doppio avvio, Wi-Fi, soluzione dei problemi, limiti noti): <a class="doc" href="README.txt">README.txt</a></p>
+    <p class="creds gh-riga"><a class="gh-link" href="https://github.com/Zetarays/zetarays-os" target="_blank" rel="noopener noreferrer"><svg class="gh" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span data-en="Source code and bug reports on GitHub">Codice sorgente e segnalazioni su GitHub</span></a></p>
     <div class="support">
       <span data-en="ZETA RAYS is free. If it helps you, you can support it:">ZETA RAYS è libero. Se ti è utile, puoi sostenerlo:</span>
       <a href="https://www.paypal.com/pool/9sSHdLylmE?sr=wccr" target="_blank" rel="noopener noreferrer">
@@ -677,8 +686,8 @@
   <section class="wrap legal" id="legale">
     <p class="eyebrow" data-en="Licenses &amp; software">Licenze &amp; software</p>
     <h2 data-en="Free software, honestly.">Software libero, sul serio.</h2>
-    <p data-en="Everything written for ZETA RAYS (the ZETA assistant and ZETA Core, the Monitor, the Settings, the desktop, the bar, the search, the themes) is released under the GNU GPL version 3 or later. You may use, study, modify and redistribute it; the code ships in the system, in the clear. The rest is third-party free software, each under its own license.">
-      Tutto ciò che è scritto per ZETA RAYS (l'assistente ZETA e ZETA Core, il Monitor, le Impostazioni, la scrivania, la barra, la ricerca, i temi) è distribuito con la GNU GPL versione 3 o successive. Puoi usarlo, studiarlo, modificarlo e ridistribuirlo; il codice è incluso nel sistema, in chiaro. Il resto è software libero di terze parti, ciascuno con la propria licenza.
+    <p data-en="Everything written for ZETA RAYS (the ZETA assistant and ZETA Core, the Monitor, the Settings, the desktop, the bar, the search, the themes) is released under the GNU GPL version 3 or later. You may use, study, modify and redistribute it; the code ships in the system, in the clear, and is on GitHub: <a href=&quot;https://github.com/Zetarays/zetarays-os&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot;>github.com/Zetarays/zetarays-os</a>. The rest is third-party free software, each under its own license.">
+      Tutto ciò che è scritto per ZETA RAYS (l'assistente ZETA e ZETA Core, il Monitor, le Impostazioni, la scrivania, la barra, la ricerca, i temi) è distribuito con la GNU GPL versione 3 o successive. Puoi usarlo, studiarlo, modificarlo e ridistribuirlo; il codice è incluso nel sistema, in chiaro, ed è su GitHub: <a href="https://github.com/Zetarays/zetarays-os" target="_blank" rel="noopener noreferrer">github.com/Zetarays/zetarays-os</a>. Il resto è software libero di terze parti, ciascuno con la propria licenza.
     </p>
     <div class="rows">
       <div class="row"><div class="k" data-en="Foundations">Fondamenta</div><div class="v" data-en="Linux kernel (Linus Torvalds and the kernel community), Debian GNU/Linux (SPI, Inc.), the GNU tools (FSF), systemd.">Kernel Linux (Linus Torvalds e la comunità del kernel), Debian GNU/Linux (SPI, Inc.), gli strumenti GNU (FSF), systemd.</div></div>
@@ -777,6 +786,7 @@
       <a href="#privacy" data-en="Privacy">Privacy</a>
       <a href="#legale" data-en="Legal notices">Note legali</a>
       <a href="#contatti" data-en="Contact">Contatti</a>
+      <a class="gh-link" href="https://github.com/Zetarays/zetarays-os" target="_blank" rel="noopener noreferrer"><svg class="gh" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg><span>GitHub</span></a>
       <a href="mailto:info@zetarays.org">info@zetarays.org</a>
     </div>
     <p style="color:var(--ink-faint)">© 2026 ZETA RAYS · zetarays.org · <span data-en="Free software, GPL-3.0-or-later">Software libero, GPL-3.0-or-later</span> · <span data-en="Project by Francesco Megna">Progetto a cura di Francesco Megna</span></p>

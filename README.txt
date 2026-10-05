@@ -18,19 +18,19 @@
 
   zetarays-1.7-amd64.iso    Intel and AMD PCs. This is the right file for
                             almost every desktop and laptop.
-                            3,476,029,440 bytes (3.48 GB)
+                            3,482,845,184 bytes (3.48 GB)
 
   zetarays-1.7-arm64.iso    64-bit ARM machines and Apple Silicon Macs
                             (with UTM or QEMU).
-                            3,434,539,008 bytes (3.43 GB)
+                            3,441,524,736 bytes (3.44 GB)
 
   zetarays-1.7-amd64.ova    Ready-made VirtualBox machine for Intel and AMD
                             PCs. Import it and start it, nothing to install.
-                            3,798,016,000 bytes (3.80 GB)
+                            3,808,797,184 bytes (3.81 GB)
 
   zetarays-1.7-arm64.ova    Ready-made VirtualBox machine for Apple Silicon
                             Macs (VirtualBox 7.2 or later).
-                            3,858,300,928 bytes (3.86 GB)
+                            3,868,589,568 bytes (3.87 GB)
 
 Use an ISO to install ZETA RAYS on a computer, or to try it from a USB stick
 without touching your disk. Use an OVA to try it inside a window, leaving your
@@ -46,10 +46,10 @@ pick any language on its first screen.
 Always check that the file arrived intact. The SHA-256 code must match
 exactly.
 
-  arm64.iso   b4856b9328fe4402b0a3e38fe0c1d2b934c2da765da9996f0526931615cdca9a
-  arm64.ova   7f587d5baa901a8bc70fa58a5fdfac258772ad8802d5c0b27a074713736426be
-  amd64.iso   2d75880f6d40df1cca1e5799a0b60f21c0dd40ed6ae75b16185f67ebc7ad7845
-  amd64.ova   b52f93eaab9d0fcd0adee0244657e20099ccc2a3c92bdea1dd4b4aa03aeee33f
+  arm64.iso   ec36e53dfcd2bcd05d6e6b655e255750517dcc0b3a9f5efbbe77df5ac318ffe7
+  arm64.ova   bdfbcd0a5e304a6a45a939056ed6d5b092a07ea206a2c9c2501f9464f1aa541b
+  amd64.iso   c5fb8b82506ab6f88b7a446efaa7a8bc1b07cf8ccaa8da4c9768bdd17b10e1f3
+  amd64.ova   8c4e7a999859dc4c7511b1a2d5090cf03a0881de0bb14da008b347a1ba1fe642
 
 The same codes are in the SHA256SUMS file, next to the images.
 
@@ -254,7 +254,19 @@ Apps
   Firefox, Thunderbird, a text editor, a media player, an image viewer, a PDF
   viewer, a terminal with tabs, splits, bash, zsh and fish. Settings > App
   predefinite chooses the default for each role, and every program follows the
-  choice. Printing (CUPS) with automatic discovery of printers.
+  choice.
+
+Printers
+  Settings > Stampanti finds Wi-Fi, wired and USB printers by itself and adds
+  them with one click, without drivers (IPP Everywhere) or with the right
+  driver (HP, Epson, Brother, Gutenprint for older Canon and others). There
+  is a test page button, and a printer can also be added by its IP address.
+
+Files and system folders
+  In Files, right-click inside a system folder such as /opt: "Incolla qui
+  come amministratore" pastes the copied files after asking for your
+  password, "Apri come amministratore" opens the folder with full rights.
+  "Invia a > Scrivania" puts a working link to any program on the desktop.
 
 Terminal tools
   ip, ifconfig, route, ss, ping, traceroute, tracepath, mtr, dig, host,
