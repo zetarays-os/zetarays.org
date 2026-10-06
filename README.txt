@@ -18,19 +18,19 @@
 
   zetarays-1.7-amd64.iso    Intel and AMD PCs. This is the right file for
                             almost every desktop and laptop.
-                            3,482,845,184 bytes (3.48 GB)
+                            3,489,660,928 bytes (3.49 GB)
 
   zetarays-1.7-arm64.iso    64-bit ARM machines and Apple Silicon Macs
                             (with UTM or QEMU).
-                            3,441,524,736 bytes (3.44 GB)
+                            3,448,324,096 bytes (3.45 GB)
 
   zetarays-1.7-amd64.ova    Ready-made VirtualBox machine for Intel and AMD
                             PCs. Import it and start it, nothing to install.
-                            3,808,797,184 bytes (3.81 GB)
+                            3,818,549,248 bytes (3.82 GB)
 
   zetarays-1.7-arm64.ova    Ready-made VirtualBox machine for Apple Silicon
                             Macs (VirtualBox 7.2 or later).
-                            3,868,589,568 bytes (3.87 GB)
+                            3,877,736,960 bytes (3.88 GB)
 
 Use an ISO to install ZETA RAYS on a computer, or to try it from a USB stick
 without touching your disk. Use an OVA to try it inside a window, leaving your
@@ -46,10 +46,10 @@ pick any language on its first screen.
 Always check that the file arrived intact. The SHA-256 code must match
 exactly.
 
-  arm64.iso   ec36e53dfcd2bcd05d6e6b655e255750517dcc0b3a9f5efbbe77df5ac318ffe7
-  arm64.ova   bdfbcd0a5e304a6a45a939056ed6d5b092a07ea206a2c9c2501f9464f1aa541b
-  amd64.iso   c5fb8b82506ab6f88b7a446efaa7a8bc1b07cf8ccaa8da4c9768bdd17b10e1f3
-  amd64.ova   8c4e7a999859dc4c7511b1a2d5090cf03a0881de0bb14da008b347a1ba1fe642
+  arm64.iso   7e64e696b35fd13b55a337b00d2000898ad62a664750917173b24756c19a25b4
+  arm64.ova   291ff453a0d1062ea3499e517617109b8f4bd0b49c2d8a48162193ff1222cffd
+  amd64.iso   81757837be0356a3ed47fe1f20c12a01429cddd319e69a38a7e85aea8ede9f10
+  amd64.ova   4cce877faee32db343832c8099361244365ba9909bef88ca74a8669d7c49b43c
 
 The same codes are in the SHA256SUMS file, next to the images.
 
@@ -262,11 +262,35 @@ Printers
   driver (HP, Epson, Brother, Gutenprint for older Canon and others). There
   is a test page button, and a printer can also be added by its IP address.
 
+Search
+  The magnifying glass in the bar finds apps, settings, your files and the
+  text inside your documents. Your own files come first, even ones you
+  created a second ago, each with the icon of its type; then external
+  disks, /opt and /etc. Internal system files are left out.
+
 Files and system folders
   In Files, right-click inside a system folder such as /opt: "Incolla qui
   come amministratore" pastes the copied files after asking for your
   password, "Apri come amministratore" opens the folder with full rights.
   "Invia a > Scrivania" puts a working link to any program on the desktop.
+
+Installing and managing programs
+  Right-click any app in the app menu or in search: open it, open its file
+  location, add it to the desktop or the Dock, see where it comes from
+  (APT, Flatpak, AppImage, /opt), its version and paths, remove it from the
+  menu or uninstall it. System apps cannot be removed by mistake.
+  Double-click a .deb file or a .flatpakref (the "Install" button on
+  flathub.org) to install it. AppImages placed in the Applicazioni or
+  Scaricati folder join the menu by themselves, with their own icon.
+  "Cambia icona..." gives an app a new icon everywhere (menu, Dock, search,
+  desktop); "Ripristina l'icona" puts the original back.
+
+Servers and shared folders
+  "Connetti a un server" (app menu, search, or Settings > Wi-Fi e rete)
+  opens shared folders of Windows PCs, Macs and NAS (SMB), SSH servers
+  (SFTP), FTP, WebDAV (Nextcloud), NFS and older Macs (AFP). Servers on the
+  local network are listed by themselves. Favourites also appear in the
+  file manager, and the password can be remembered.
 
 Terminal tools
   ip, ifconfig, route, ss, ping, traceroute, tracepath, mtr, dig, host,
