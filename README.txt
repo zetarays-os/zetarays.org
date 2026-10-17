@@ -1,5 +1,5 @@
 ===============================================================================
- ZETA RAYS OS 2.0
+ ZETA RAYS OS 2.1
  A free, minimal operating system with local AI and security tools.
  https://zetarays.org   .   info@zetarays.org
 ===============================================================================
@@ -16,21 +16,21 @@
 1. WHICH FILE TO DOWNLOAD
 -------------------------------------------------------------------------------
 
-  zetarays-2.0-amd64.iso    Intel and AMD PCs. This is the right file for
+  zetarays-2.1-amd64.iso    Intel and AMD PCs. This is the right file for
                             almost every desktop and laptop.
-                            4,068,900,864 bytes (4.07 GB)
+                            5,478,617,088 bytes (5.48 GB)
 
-  zetarays-2.0-arm64.iso    64-bit ARM machines and Apple Silicon Macs
+  zetarays-2.1-arm64.iso    64-bit ARM machines and Apple Silicon Macs
                             (with UTM or QEMU).
-                            4,077,236,224 bytes (4.08 GB)
+                            5,481,529,344 bytes (5.48 GB)
 
-  zetarays-2.0-amd64.ova    Ready-made VirtualBox machine for Intel and AMD
+  zetarays-2.1-amd64.ova    Ready-made VirtualBox machine for Intel and AMD
                             PCs. Import it and start it, nothing to install.
-                            4,301,473,280 bytes (4.30 GB)
+                            5,725,370,880 bytes (5.73 GB)
 
-  zetarays-2.0-arm64.ova    Ready-made VirtualBox machine for Apple Silicon
+  zetarays-2.1-arm64.ova    Ready-made VirtualBox machine for Apple Silicon
                             Macs (VirtualBox 7.2 or later).
-                            4,358,478,336 bytes (4.36 GB)
+                            5,779,972,608 bytes (5.78 GB)
 
 Use an ISO to install ZETA RAYS on a computer, or to try it from a USB stick
 without touching your disk. Use an OVA to try it inside a window, leaving your
@@ -47,23 +47,23 @@ system then uses them everywhere (see "Language and keyboard" in section 6).
 Always check that the file arrived intact. The SHA-256 checksum must match
 exactly.
 
-  arm64.iso   450afc6d601b639c1ca3feefc0efdfdcf27373aba6dd2a1ed81835d59a05d672
-  arm64.ova   b6cfefd5639fc9ebdc90fa00532c197091365c5f905aa848e7160994c02dd51e
-  amd64.iso   f92d407a18148872bae8c3a81ab5b96a05135b1a3046fd6ba6dcfda2a73b24d1
-  amd64.ova   da5a8f607bcba53e0ed04687b6206f0a424c4626c773dead6707883d911478d7
+  arm64.iso   d402a4d05e2f44b7e2400943f3a770e1331f0261d8e1cea42d4f2dffd97535ac
+  arm64.ova   8d9da4c808c6ef79e8cb1e5749bccb9ed770c7f10556fc97124873d32f76724c
+  amd64.iso   f51848aad7e6d730f26bcc26bc0288d745c635d469b27907e7d454a34e5fce63
+  amd64.ova   6189c8256d0392fdc4e980fd66521aa817f524b2c877073e4bf62ccd2a586713
 
 The same checksums are in the SHA256SUMS file, next to the images.
 
 How to check:
 
   Windows (PowerShell)
-      Get-FileHash .\zetarays-2.0-amd64.iso -Algorithm SHA256
+      Get-FileHash .\zetarays-2.1-amd64.iso -Algorithm SHA256
 
   macOS (Terminal)
-      shasum -a 256 zetarays-2.0-arm64.iso
+      shasum -a 256 zetarays-2.1-arm64.iso
 
   Linux (Terminal)
-      sha256sum zetarays-2.0-amd64.iso
+      sha256sum zetarays-2.1-amd64.iso
 
   All files at once, with SHA256SUMS in the same folder:
       sha256sum -c SHA256SUMS        (Linux)
@@ -88,15 +88,18 @@ without a reason, and no feature that only works in a demo.
 
                  Minimum                       Recommended
   Processor      64-bit (x86-64 or ARM64)      4 cores or more
-  Memory         4 GB                          8 GB
+  Memory         8 GB                          16 GB
   Disk           15 GB free                    20 GB free or more
   Firmware       UEFI or BIOS (amd64)          UEFI with Secure Boot
 
   Processor    64-bit is required. On a 32-bit processor or virtual machine
                the boot stops with an error.
-  Memory       With less than 8 GB the local AI model is not kept in memory
-               between questions, so answers are slower. With 16 GB or more
-               it is loaded in advance, at login.
+  Memory       The system and the local AI run with 8 GB: the AI model
+               (about 3.7 GB when loaded) is loaded when you ask something and
+               released after a few minutes. With 16 GB or more it is loaded
+               in advance, at login, and answers start sooner. With 4 GB the
+               desktop works, but use a smaller model or an online service
+               for ZETA.
   Disk         The installed system takes about 8 GB.
   Firmware     The images use the signed shim: Secure Boot can stay on.
                The amd64 image also boots in BIOS/Legacy mode.
@@ -194,7 +197,7 @@ password.
 
 A complete desktop, written for ZETA RAYS: bar, Dock, app launcher, Control
 Center, Files, Terminal, Monitor, Security, Settings, file search. Technical
-base: Debian 13 (trixie), Linux kernel 6.12.111, Hyprland 0.55 with the
+base: Debian 13 (trixie), Linux kernel 6.12.113, Hyprland 0.55 with the
 official fix for a crash with open menus.
 
 Security and analysis tools, for professional and educational use, with a
@@ -470,19 +473,22 @@ Finding programs
   asks which one you mean: "open blender flatpak".
 
 Voice
-  ZETA can read its answers aloud with a natural voice (Piper, on your
-  computer: Paola in Italian, Lessac in English; other languages use
-  espeak-ng) and understand spoken commands (Vosk, Italian and English,
-  also on your computer). Nothing you say or hear leaves the computer.
+  ZETA can read its answers aloud with a natural voice computed on your
+  computer: Sara (Kokoro) in Italian, with Serena and Paola (Piper) as
+  alternatives, and Lessac (Piper) in English; other languages use
+  espeak-ng. Settings > AI > Voice chooses the voice and the speed. ZETA
+  also understands spoken commands (Vosk, Italian and English, also on your
+  computer). Nothing you say or hear leaves the computer.
 
 Local AI: Ollama
-  By default ZETA uses Ollama with the Llama 3.2 model (1B), included in the
-  image and running on your computer: no account, no internet, nothing sent
+  By default ZETA uses Ollama with the Qwen3 4B Instruct model, included in
+  the image and running on your computer: no account, no internet, nothing sent
   anywhere. Simple commands are understood in a fraction of a second without
   the model; the model answers questions and free-form requests. The model
-  is loaded into memory when you open ZETA (at login on machines with 16 GB
-  or more) and released when not needed, so it does not use memory while
-  you are not using it. Settings > AI manages the local models.
+  is loaded into memory when you ask something (when you open ZETA with
+  12 GB or more, at login with 16 GB or more) and released when not
+  needed, so it does not use memory while you are not using it.
+  Settings > AI manages the local models.
 
 Online AI (optional)
   Settings > AI also connects ZETA to Claude, OpenAI (ChatGPT), Gemini,
@@ -509,8 +515,8 @@ Online AI (optional)
 
 You always know what is happening
   Under the sphere, ZETA shows which AI and which model are answering, for
-  example "Ollama . llama3.2:1b . local". While it works it says whether it
-  is loading the model, contacting the online service or carrying out a
+  example "Ollama . qwen3:4b-instruct . local". While it works it says
+  whether it is loading the model, contacting the online service or doing a
   command. Errors give the real reason in plain words: invalid key, service
   not reachable, model not found, too many requests, no internet.
 
@@ -622,8 +628,8 @@ No Wi-Fi at all
 
 The first answer of ZETA is slow
   The local model is being loaded into memory, which takes a few seconds the
-  first time; ZETA says so while it happens. With less than 8 GB of memory it
-  is loaded again each time.
+  first time; ZETA says so while it happens. On computers with less memory
+  it is released after a few minutes and loaded again at the next question.
 
 A program does not respond
   Ctrl + Alt + Esc, then click its window. Or Ctrl + Alt + Delete.
@@ -690,9 +696,11 @@ Anything else
     network, instead of "Wrong password".
   - Suspend, Bluetooth and the microphone depend on the hardware and were
     tested in virtual machines only.
-  - The local model (Llama 3.2 1B) is small, so that it runs on modest
-    computers: it is good for commands and short answers. For long or complex
-    work, connect a bigger local model or an online service in Settings > AI.
+  - The local model (Qwen3 4B Instruct) runs on the computer's processor:
+    on computers without a fast processor the first answer can take some
+    seconds. Its knowledge stops at its training date: for current facts
+    turn on "Search the web" in Settings > AI (off by default), otherwise ZETA
+    says it cannot verify them.
   - Online AI services need your own key and a working internet connection.
   - Some images on web pages exist only inside the page ("blob" images):
     Firefox cannot hand them over by dragging. Right-click them and choose
@@ -713,11 +721,9 @@ Third-party software and licenses (and Full list of components), and in the
 files under /usr/share/zeta/legal/.
 
 Built on the work of Debian, Kali Linux, Mozilla, the GNU project, Linus
-Torvalds and the Linux kernel community, Hyprland, XFCE, GNOME, KDE, Ollama
-and Meta for Llama 3.2, and everyone who wrote the free software that is in
+Torvalds and the Linux kernel community, Hyprland, XFCE, GNOME, KDE, Ollama,
+the Qwen team for Qwen3, and everyone who wrote the free software that is in
 here.
-
-Built with Llama.
 
 
 12. PRIVACY

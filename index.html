@@ -294,6 +294,7 @@
   .wallpaper figcaption span{font-family:var(--mono); font-size:12px; color:var(--ink-faint)}
   .wallpaper a:hover figcaption span{color:var(--accent)}
   .wallpaper:hover{border-color:var(--line-2)}
+  .wallpaper.featured{grid-column:1 / -1}
   .wallpapers.logos{grid-template-columns:repeat(4,1fr)}
   .wallpapers.logos img{aspect-ratio:16/9}
   @media (max-width:760px){ .wallpapers.logos{grid-template-columns:repeat(2,1fr)} }
@@ -467,7 +468,7 @@
         Un sistema operativo libero e minimale: una scrivania nera e pulita, strumenti avanzati di sicurezza e pentest, e un'intelligenza artificiale locale, ZETA, che ti capisce e fa funzionare il computer per te.
       </p>
       <div class="hero-actions">
-        <a class="cta" href="#download" data-en="Download ZETA RAYS 2.0">Scarica ZETA RAYS 2.0</a>
+        <a class="cta" href="#download" data-en="Download ZETA RAYS 2.1">Scarica ZETA RAYS 2.1</a>
         <a class="btn-ghost" href="#zeta" data-en="Meet ZETA">Conosci ZETA</a>
         <a class="btn-support" href="https://www.paypal.com/pool/9sSHdLylmE?sr=wccr" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.2l-1.45-1.32C5.4 15.24 2 12.16 2 8.4 2 5.32 4.42 2.9 7.5 2.9c1.74 0 3.41.81 4.5 2.09A6 6 0 0 1 16.5 2.9C19.58 2.9 22 5.32 22 8.4c0 3.76-3.4 6.84-8.55 11.49z"/></svg><span data-en="Support">Support</span></a>
       </div>
@@ -535,7 +536,7 @@
     <div class="grid cols-2">
       <div class="card">
         <h3 data-en="Local and private">Locale e privata</h3>
-        <p data-en="The model (Llama 3.2) runs on your computer via Ollama, offline. No account, no tracking. Conversations stay on the device. Under the sphere you always see which AI and model are answering, and while it works ZETA says whether it is loading the model or contacting the service.">Il modello (Llama 3.2) gira sul tuo computer tramite Ollama, offline. Nessun account, nessun tracciamento. Le conversazioni restano sul dispositivo. Sotto la sfera vedi sempre quale intelligenza e quale modello rispondono, e mentre lavora ZETA dice se sta caricando il modello o contattando il servizio.</p>
+        <p data-en="The model (Qwen3 4B) runs on your computer via Ollama, offline. No account, no tracking. Conversations stay on the device. Under the sphere you always see which AI and model are answering, and while it works ZETA says whether it is loading the model or contacting the service.">Il modello (Qwen3 4B) gira sul tuo computer tramite Ollama, offline. Nessun account, nessun tracciamento. Le conversazioni restano sul dispositivo. Sotto la sfera vedi sempre quale intelligenza e quale modello rispondono, e mentre lavora ZETA dice se sta caricando il modello o contattando il servizio.</p>
       </div>
       <div class="card">
         <h3 data-en="Controlled, and extensible">Controllata, ed estendibile</h3>
@@ -613,6 +614,7 @@
     <h3 class="wallpapers-title" data-en="Wallpapers">Sfondi</h3>
     <p class="wallpapers-note" data-en="Included in the system, one click away in Settings, Appearance. Or just ask ZETA: set the wallpaper to red waves.">Inclusi nel sistema, a un click in Impostazioni › Aspetto. Oppure chiedilo a ZETA: metti lo sfondo onde rosse.</p>
     <div class="wallpapers">
+      <figure class="wallpaper featured"><a href="wallpapers/zeta-goddess.jpg" download><img src="wallpapers/thumbnails/zeta-goddess.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Sfondo ZETA RAYS: Dea" data-en-alt="ZETA RAYS wallpaper: Goddess"><figcaption><b data-en="Goddess">Dea</b><span data-en="Download">Scarica</span></figcaption></a></figure>
       <figure class="wallpaper"><a href="wallpapers/zeta-blue-waves.jpg" download><img src="wallpapers/thumbnails/zeta-blue-waves.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Sfondo ZETA RAYS: Onde blu" data-en-alt="ZETA RAYS wallpaper: Blue waves"><figcaption><b data-en="Blue waves">Onde blu</b><span data-en="Download">Scarica</span></figcaption></a></figure>
       <figure class="wallpaper"><a href="wallpapers/zeta-green-circuits.jpg" download><img src="wallpapers/thumbnails/zeta-green-circuits.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Sfondo ZETA RAYS: Circuiti verdi" data-en-alt="ZETA RAYS wallpaper: Green circuits"><figcaption><b data-en="Green circuits">Circuiti verdi</b><span data-en="Download">Scarica</span></figcaption></a></figure>
       <figure class="wallpaper"><a href="wallpapers/zeta-red-waves.jpg" download><img src="wallpapers/thumbnails/zeta-red-waves.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Sfondo ZETA RAYS: Onde rosse" data-en-alt="ZETA RAYS wallpaper: Red waves"><figcaption><b data-en="Red waves">Onde rosse</b><span data-en="Download">Scarica</span></figcaption></a></figure>
@@ -628,13 +630,13 @@
 
   <!-- DOWNLOAD -->
   <section class="wrap" id="download">
-    <p class="eyebrow" data-en="Download · version 2.0">Scarica · versione 2.0</p>
+    <p class="eyebrow" data-en="Download · version 2.1">Scarica · versione 2.1</p>
     <h2 data-en="Choose your machine.">Scegli la tua macchina.</h2>
-    <p class="lead" data-en="ISO to install on a computer, OVA to import into VirtualBox. Each image includes the local AI model. Give a virtual machine at least 8 GB of RAM so ZETA keeps the model ready.">
-      ISO per installare su un computer, OVA da importare in VirtualBox. Ogni immagine include il modello AI locale. Dai a una macchina virtuale almeno 8 GB di RAM perché ZETA tenga il modello pronto.
+    <p class="lead" data-en="ISO to install on a computer, OVA to import into VirtualBox. Each image includes the local AI model. The system runs on 8 GB of RAM; give a virtual machine at least 8 GB so ZETA can load the model (with 16 GB it stays ready).">
+      ISO per installare su un computer, OVA da importare in VirtualBox. Ogni immagine include il modello AI locale. Il sistema funziona con 8 GB di RAM; dai a una macchina virtuale almeno 8 GB perché ZETA possa caricare il modello (con 16 GB resta pronto).
     </p>
     <!-- The four images live on download.zetarays.org, each in its own
-         folder (releases/2.0/<architecture>/<iso|ova>/): the full addresses
+         folder (releases/<version>/<architecture>/<iso|ova>/): the full addresses
          are written in the links below. data-base stays empty: it would only
          be needed if all the files were in a single folder (the script takes
          the file name and appends it to data-base). -->
@@ -644,8 +646,8 @@
         <h3 data-en="Intel / AMD PC">PC Intel / AMD</h3>
         <p class="desc" data-en="For most desktops and laptops with an x86-64 processor.">Per la maggior parte dei computer fissi e portatili con processore x86-64.</p>
         <div class="dl-links">
-          <a class="iso" href="https://download.zetarays.org/releases/2.0/amd64/iso/zetarays-2.0-amd64.iso" download data-en="ISO · 4.1 GB">ISO · 4,1 GB</a>
-          <a class="ova" href="https://download.zetarays.org/releases/2.0/amd64/ova/zetarays-2.0-amd64.ova" download data-en="OVA · 4.3 GB">OVA · 4,3 GB</a>
+          <a class="iso" href="https://download.zetarays.org/releases/2.1/amd64/iso/zetarays-2.1-amd64.iso" download data-en="ISO · 5.5 GB">ISO · 5,5 GB</a>
+          <a class="ova" href="https://download.zetarays.org/releases/2.1/amd64/ova/zetarays-2.1-amd64.ova" download data-en="OVA · 5.7 GB">OVA · 5,7 GB</a>
         </div>
       </div>
       <div class="dl">
@@ -653,8 +655,8 @@
         <h3 data-en="Apple Silicon / ARM">Mac Apple Silicon / ARM</h3>
         <p class="desc" data-en="For Apple Silicon Macs and ARM64 machines (VirtualBox 7.2+).">Per Mac con chip Apple e macchine ARM64 (VirtualBox 7.2+).</p>
         <div class="dl-links">
-          <a class="iso" href="https://download.zetarays.org/releases/2.0/arm64/iso/zetarays-2.0-arm64.iso" download data-en="ISO · 4.1 GB">ISO · 4,1 GB</a>
-          <a class="ova" href="https://download.zetarays.org/releases/2.0/arm64/ova/zetarays-2.0-arm64.ova" download data-en="OVA · 4.4 GB">OVA · 4,4 GB</a>
+          <a class="iso" href="https://download.zetarays.org/releases/2.1/arm64/iso/zetarays-2.1-arm64.iso" download data-en="ISO · 5.5 GB">ISO · 5,5 GB</a>
+          <a class="ova" href="https://download.zetarays.org/releases/2.1/arm64/ova/zetarays-2.1-arm64.ova" download data-en="OVA · 5.8 GB">OVA · 5,8 GB</a>
         </div>
       </div>
     </div>
@@ -665,10 +667,10 @@
           Dopo il download controlla che il file sia arrivato intero. Il codice qui sotto deve corrispondere esattamente. Su Windows: <code>Get-FileHash .\file.iso -Algorithm SHA256</code> · su macOS: <code>shasum -a 256 file.iso</code> · su Linux: <code>sha256sum file.iso</code>. Se non corrisponde il file è incompleto: scaricalo di nuovo e non installarlo.
         </p>
         <table>
-          <tr><td class="f">amd64.iso</td><td class="h">f92d407a18148872bae8c3a81ab5b96a05135b1a3046fd6ba6dcfda2a73b24d1</td></tr>
-          <tr><td class="f">amd64.ova</td><td class="h">da5a8f607bcba53e0ed04687b6206f0a424c4626c773dead6707883d911478d7</td></tr>
-          <tr><td class="f">arm64.iso</td><td class="h">450afc6d601b639c1ca3feefc0efdfdcf27373aba6dd2a1ed81835d59a05d672</td></tr>
-          <tr><td class="f">arm64.ova</td><td class="h">b6cfefd5639fc9ebdc90fa00532c197091365c5f905aa848e7160994c02dd51e</td></tr>
+          <tr><td class="f">amd64.iso</td><td class="h">f51848aad7e6d730f26bcc26bc0288d745c635d469b27907e7d454a34e5fce63</td></tr>
+          <tr><td class="f">amd64.ova</td><td class="h">6189c8256d0392fdc4e980fd66521aa817f524b2c877073e4bf62ccd2a586713</td></tr>
+          <tr><td class="f">arm64.iso</td><td class="h">d402a4d05e2f44b7e2400943f3a770e1331f0261d8e1cea42d4f2dffd97535ac</td></tr>
+          <tr><td class="f">arm64.ova</td><td class="h">8d9da4c808c6ef79e8cb1e5749bccb9ed770c7f10556fc97124873d32f76724c</td></tr>
         </table>
         <p style="margin:14px 0 0" data-en="The same codes are in <a class=&quot;sums&quot; href=&quot;SHA256SUMS&quot;>SHA256SUMS</a>, ready for <code>sha256sum -c SHA256SUMS</code>.">
           Gli stessi codici sono nel file <a class="sums" href="SHA256SUMS">SHA256SUMS</a>, pronto per <code>sha256sum -c SHA256SUMS</code>.
@@ -698,11 +700,11 @@
     <div class="rows">
       <div class="row"><div class="k" data-en="Foundations">Fondamenta</div><div class="v" data-en="Linux kernel (Linus Torvalds and the kernel community), Debian GNU/Linux (SPI, Inc.), the GNU tools (FSF), systemd.">Kernel Linux (Linus Torvalds e la comunità del kernel), Debian GNU/Linux (SPI, Inc.), gli strumenti GNU (FSF), systemd.</div></div>
       <div class="row"><div class="k" data-en="Desktop &amp; apps">Desktop e app</div><div class="v" data-en="Hyprland (compositor), Mozilla Firefox, Thunar (XFCE), GNOME apps (Text Editor, Calculator, Evince, Eye of GNOME, File Roller), mpv, SDDM (Qt/KDE), Calamares, Synaptic, Waybar.">Hyprland (compositore), Mozilla Firefox, Thunar (XFCE), applicazioni GNOME (Editor, Calcolatrice, Evince, Eye of GNOME, File Roller), mpv, SDDM (Qt/KDE), Calamares, Synaptic, Waybar.</div></div>
-      <div class="row"><div class="k" data-en="Intelligence">Intelligenza</div><div class="v" data-en="Ollama (MIT), Llama 3.2 (Meta, Llama 3.2 Community License), Vosk, eSpeak NG, Tesseract OCR.">Ollama (MIT), Llama 3.2 (Meta, Llama 3.2 Community License), Vosk, eSpeak NG, Tesseract OCR.</div></div>
+      <div class="row"><div class="k" data-en="Intelligence">Intelligenza</div><div class="v" data-en="Ollama (MIT), Qwen3 4B Instruct (Qwen team, Alibaba Cloud, Apache-2.0), Vosk, eSpeak NG, Tesseract OCR.">Ollama (MIT), Qwen3 4B Instruct (Qwen team, Alibaba Cloud, Apache-2.0), Vosk, eSpeak NG, Tesseract OCR.</div></div>
       <div class="row"><div class="k" data-en="Fonts">Caratteri</div><div class="v" data-en="Roboto (Google, Apache-2.0), JetBrains Mono (JetBrains, OFL-1.1).">Roboto (Google, Apache-2.0), JetBrains Mono (JetBrains, OFL-1.1).</div></div>
     </div>
-    <div class="note" data-en="<b>Built with Llama.</b> Llama 3.2 is licensed under the Llama 3.2 Community License, Copyright © Meta Platforms, Inc. All Rights Reserved. The full license, use policy and required notice ship inside the image.">
-      <b>Built with Llama.</b> Llama 3.2 è distribuito con la Llama 3.2 Community License, Copyright © Meta Platforms, Inc. All Rights Reserved. Licenza, policy d'uso e avviso richiesto sono inclusi nell'immagine.
+    <div class="note" data-en="<b>Local AI model.</b> Qwen3 4B Instruct (2507) by the Qwen team (Alibaba Cloud) is licensed under the Apache License 2.0. The full license ships inside the image.">
+      <b>Modello AI locale.</b> Qwen3 4B Instruct (2507) del team Qwen (Alibaba Cloud) è distribuito con la licenza Apache 2.0. Il testo completo della licenza è incluso nell'immagine.
     </div>
   </section>
 
@@ -785,8 +787,8 @@
 <footer>
   <div class="wrap">
     <div class="fbrand"><svg class="sym"><use href="#zeta-sym"/></svg><span>ZETA RAYS OS</span></div>
-    <p class="tm" data-en="Built on Debian GNU/Linux. Includes free software from the Linux kernel, GNU, systemd, Hyprland, Mozilla Firefox, XFCE, GNOME, KDE/Qt, mpv, Ollama and others, each under its own license. Built with Llama (Llama 3.2 © Meta Platforms, Inc.). All names and logos belong to their respective owners; ZETA RAYS OS is not produced, endorsed or approved by any of them. The name “ZETA RAYS”, the symbol and the wordmark are trademarks of the ZETA RAYS project.">
-      Costruito su Debian GNU/Linux. Include software libero da kernel Linux, GNU, systemd, Hyprland, Mozilla Firefox, XFCE, GNOME, KDE/Qt, mpv, Ollama e altri, ciascuno con la propria licenza. Built with Llama (Llama 3.2 © Meta Platforms, Inc.). Tutti i nomi e i loghi appartengono ai rispettivi titolari; ZETA RAYS OS non è prodotto, sostenuto né approvato da nessuno di loro. Il nome «ZETA RAYS», il simbolo e il logotipo sono marchi del progetto ZETA RAYS.
+    <p class="tm" data-en="Built on Debian GNU/Linux. Includes free software from the Linux kernel, GNU, systemd, Hyprland, Mozilla Firefox, XFCE, GNOME, KDE/Qt, mpv, Ollama and others, each under its own license. All names and logos belong to their respective owners; ZETA RAYS OS is not produced, endorsed or approved by any of them. The name “ZETA RAYS”, the symbol and the wordmark are trademarks of the ZETA RAYS project.">
+      Costruito su Debian GNU/Linux. Include software libero da kernel Linux, GNU, systemd, Hyprland, Mozilla Firefox, XFCE, GNOME, KDE/Qt, mpv, Ollama e altri, ciascuno con la propria licenza. Tutti i nomi e i loghi appartengono ai rispettivi titolari; ZETA RAYS OS non è prodotto, sostenuto né approvato da nessuno di loro. Il nome «ZETA RAYS», il simbolo e il logotipo sono marchi del progetto ZETA RAYS.
     </p>
     <div class="flinks">
       <a href="#privacy" data-en="Privacy">Privacy</a>
