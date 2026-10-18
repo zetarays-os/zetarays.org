@@ -506,7 +506,7 @@
       <div class="card">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4l1.6 4.4L18 10l-4.4 1.6L12 16l-1.6-4.4L6 10l4.4-1.6z"/><path d="M18.5 15.5l.6 1.6 1.6.6-1.6.6-.6 1.6-.6-1.6-1.6-.6 1.6-.6z"/></svg>
         <h3 data-en="A real AI: ZETA">Un'AI vera: ZETA</h3>
-        <p data-en="Not a chatbot bolted on top, but an assistant that acts on the computer and runs entirely on it, offline. Your questions never leave the machine.">Non un chatbot incollato sopra, ma un assistente che agisce sul computer e gira tutto in locale, offline. Le tue domande non lasciano la macchina.</p>
+        <p data-en="Not a chatbot bolted on top, but an assistant that acts on the computer and runs entirely on it. Your conversations stay on the machine: only questions about current facts are looked up on Wikipedia, and you can turn that off.">Non un chatbot incollato sopra, ma un assistente che agisce sul computer e gira tutto in locale. Le conversazioni restano sulla macchina: solo le domande su fatti attuali vengono cercate su Wikipedia, e puoi disattivarlo.</p>
       </div>
     </div>
   </section>
@@ -667,10 +667,10 @@
           Dopo il download controlla che il file sia arrivato intero. Il codice qui sotto deve corrispondere esattamente. Su Windows: <code>Get-FileHash .\file.iso -Algorithm SHA256</code> · su macOS: <code>shasum -a 256 file.iso</code> · su Linux: <code>sha256sum file.iso</code>. Se non corrisponde il file è incompleto: scaricalo di nuovo e non installarlo.
         </p>
         <table>
-          <tr><td class="f">amd64.iso</td><td class="h">f51848aad7e6d730f26bcc26bc0288d745c635d469b27907e7d454a34e5fce63</td></tr>
-          <tr><td class="f">amd64.ova</td><td class="h">6189c8256d0392fdc4e980fd66521aa817f524b2c877073e4bf62ccd2a586713</td></tr>
-          <tr><td class="f">arm64.iso</td><td class="h">d402a4d05e2f44b7e2400943f3a770e1331f0261d8e1cea42d4f2dffd97535ac</td></tr>
-          <tr><td class="f">arm64.ova</td><td class="h">8d9da4c808c6ef79e8cb1e5749bccb9ed770c7f10556fc97124873d32f76724c</td></tr>
+          <tr><td class="f">amd64.iso</td><td class="h">9890a1ae1b1e2c525069e2ad6fed0906a8a1d492bd39f21638cd7141979177a6</td></tr>
+          <tr><td class="f">amd64.ova</td><td class="h">29cf0c7747438df902fa6c9c4086e1d03f77c603af83b12385580876b741419e</td></tr>
+          <tr><td class="f">arm64.iso</td><td class="h">5b22dc88a8257c790e429f1ed1bacc12eeb09c07b415b862e7f600af49e6e1f0</td></tr>
+          <tr><td class="f">arm64.ova</td><td class="h">a0391c1f71f1445ea5a3f4c726574ef5fb192dfcdc1368278a0f1210fec43459</td></tr>
         </table>
         <p style="margin:14px 0 0" data-en="The same codes are in <a class=&quot;sums&quot; href=&quot;SHA256SUMS&quot;>SHA256SUMS</a>, ready for <code>sha256sum -c SHA256SUMS</code>.">
           Gli stessi codici sono nel file <a class="sums" href="SHA256SUMS">SHA256SUMS</a>, pronto per <code>sha256sum -c SHA256SUMS</code>.
@@ -726,14 +726,13 @@
     </div>
 
     <h3 style="font-size:19px;margin-top:46px" data-en="2. The operating system">2. Il sistema operativo</h3>
-    <p data-en="By default nothing you do, type or ask is sent anywhere. The AI is local and offline; your conversations stay on the device. No telemetry, no profiling, no phone-home.">
-      Per impostazione predefinita nulla di ciò che fai, scrivi o chiedi viene inviato a nessuno.
-      L'AI è locale e offline; le conversazioni restano sul dispositivo. Niente telemetria,
-      niente profilazione, nessun «phone-home».
-    </p>
+    <p data-en="By default nothing you do or type is sent anywhere, except in the cases listed below. The AI is local; your conversations stay on the device. No telemetry, no profiling, no phone-home.">
+          Per impostazione predefinita nulla di ciò che fai o scrivi viene inviato a nessuno, salvo i casi elencati qui sotto. L'AI è locale; le conversazioni restano sul dispositivo. Niente telemetria, niente profilazione, nessun «phone-home».
+        </p>
     <div class="rows">
       <div class="row"><div class="k" data-en="IP map">Mappa degli IP</div><div class="v" data-en="Only while the Monitor's Map is open, IP locations are requested from an external service (ipwho.is) to draw them.">Solo mentre la Mappa del Monitor è aperta, le posizioni degli IP vengono chieste a un servizio esterno (ipwho.is) per disegnarle.</div></div>
-      <div class="row"><div class="k" data-en="Updates">Aggiornamenti</div><div class="v" data-en="Like any system, it contacts the Debian repositories to update or install packages, when you ask.">Come ogni sistema, contatta i repository Debian per aggiornarsi o installare pacchetti, quando lo chiedi.</div></div>
+      <div class="row"><div class="k" data-en="Current facts">Fatti attuali</div><div class="v" data-en="Only for questions about current facts (who holds an office, news, results) the question, shortened, is looked up on Wikipedia, so that the answer is current. Never the conversation. You can turn it off in Settings › AI.">Solo per le domande su fatti attuali (chi ricopre una carica, notizie, risultati) la domanda, abbreviata, viene cercata su Wikipedia, così la risposta è aggiornata. Mai la conversazione. Puoi spegnerlo in Impostazioni › AI.</div></div>
+          <div class="row"><div class="k" data-en="Updates">Aggiornamenti</div><div class="v" data-en="Like any system, it contacts the Debian repositories to install packages and updates when you ask; on an installed system security updates are installed automatically, and you can turn that off.">Come ogni sistema, contatta i repository Debian per installare pacchetti e aggiornamenti quando lo chiedi; su un sistema installato gli aggiornamenti di sicurezza si installano da soli, e puoi disattivarlo.</div></div>
       <div class="row"><div class="k" data-en="Cloud AI (optional)">AI cloud (facoltativa)</div><div class="v" data-en="Data goes to a cloud provider only if you connect one yourself, with your own key. It's your choice, and reversible.">I dati vanno a un provider cloud solo se ne colleghi uno tu, con la tua chiave. È una tua scelta, reversibile.</div></div>
       <div class="row"><div class="k" data-en="Verifiable">Verificabile</div><div class="v" data-en="The firewall is on by default, the Monitor shows every open connection, and the code is free: you can check what is written here yourself.">Il firewall è attivo di default, il Monitor mostra ogni connessione aperta, e il codice è libero: puoi verificare tu stesso quanto è scritto qui.</div></div>
     </div>

@@ -22,15 +22,15 @@
 
   zetarays-2.1-arm64.iso    64-bit ARM machines and Apple Silicon Macs
                             (with UTM or QEMU).
-                            5,481,529,344 bytes (5.48 GB)
+                            5,481,586,688 bytes (5.48 GB)
 
   zetarays-2.1-amd64.ova    Ready-made VirtualBox machine for Intel and AMD
                             PCs. Import it and start it, nothing to install.
-                            5,725,370,880 bytes (5.73 GB)
+                            5,725,812,224 bytes (5.73 GB)
 
   zetarays-2.1-arm64.ova    Ready-made VirtualBox machine for Apple Silicon
                             Macs (VirtualBox 7.2 or later).
-                            5,779,972,608 bytes (5.78 GB)
+                            5,779,896,320 bytes (5.78 GB)
 
 Use an ISO to install ZETA RAYS on a computer, or to try it from a USB stick
 without touching your disk. Use an OVA to try it inside a window, leaving your
@@ -47,10 +47,10 @@ system then uses them everywhere (see "Language and keyboard" in section 6).
 Always check that the file arrived intact. The SHA-256 checksum must match
 exactly.
 
-  arm64.iso   d402a4d05e2f44b7e2400943f3a770e1331f0261d8e1cea42d4f2dffd97535ac
-  arm64.ova   8d9da4c808c6ef79e8cb1e5749bccb9ed770c7f10556fc97124873d32f76724c
-  amd64.iso   f51848aad7e6d730f26bcc26bc0288d745c635d469b27907e7d454a34e5fce63
-  amd64.ova   6189c8256d0392fdc4e980fd66521aa817f524b2c877073e4bf62ccd2a586713
+  arm64.iso   5b22dc88a8257c790e429f1ed1bacc12eeb09c07b415b862e7f600af49e6e1f0
+  arm64.ova   a0391c1f71f1445ea5a3f4c726574ef5fb192dfcdc1368278a0f1210fec43459
+  amd64.iso   9890a1ae1b1e2c525069e2ad6fed0906a8a1d492bd39f21638cd7141979177a6
+  amd64.ova   29cf0c7747438df902fa6c9c4086e1d03f77c603af83b12385580876b741419e
 
 The same checksums are in the SHA256SUMS file, next to the images.
 
@@ -697,10 +697,11 @@ Anything else
   - Suspend, Bluetooth and the microphone depend on the hardware and were
     tested in virtual machines only.
   - The local model (Qwen3 4B Instruct) runs on the computer's processor:
-    on computers without a fast processor the first answer can take some
-    seconds. Its knowledge stops at its training date: for current facts
-    turn on "Search the web" in Settings > AI (off by default), otherwise ZETA
-    says it cannot verify them.
+    the first words come in a second or two, then the reply is written at
+    the speed of the processor (about six words a second on an Intel N100).
+    Its knowledge stops at its training date: questions about current facts
+    are looked up on Wikipedia (Settings > AI, on by default); with the
+    search off ZETA says it cannot verify them.
   - Online AI services need your own key and a working internet connection.
   - Some images on web pages exist only inside the page ("blob" images):
     Firefox cannot hand them over by dragging. Right-click them and choose
