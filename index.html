@@ -281,6 +281,17 @@
   .row .k{font-weight:500; color:var(--ink)}
   .row .v{color:var(--ink-dim); font-size:14.5px}
   @media (max-width:560px){ .row{grid-template-columns:1fr; gap:5px} }
+  /* Phones: the desktop list (33 entries, several screens) shows its first 8
+     and "Show all" opens the rest, so the wallpapers are not far away. Only
+     when the JavaScript runs, which adds .collapsed: without it everything is
+     visible. The hidden entries stay in the page, so search engines read them. */
+  .rows.collapsed .row:nth-child(n+9){display:none}
+  .more-rows{display:flex; align-items:center; justify-content:center; width:100%; margin-top:12px;
+    padding:13px 16px; font-family:var(--mono); font-size:13px; letter-spacing:.03em; color:var(--ink);
+    background:var(--surface); border:1px solid var(--line-2); border-radius:12px; cursor:pointer}
+  .more-rows:hover{border-color:rgba(var(--accent-rgb),.6)}
+  .more-rows:focus-visible{outline:2px solid var(--accent); outline-offset:3px}
+  .more-rows[hidden]{display:none}
 
   /* --- wallpapers --- */
   .wallpapers-title{font-size:17px; margin:44px 0 6px; letter-spacing:.01em}
@@ -395,6 +406,12 @@
   .flinks{display:flex; gap:22px; flex-wrap:wrap; font-size:13px}
   .flinks a{color:var(--ink-dim); text-decoration:none}
   .flinks a:hover{color:var(--accent)}
+  /* phones: the footer links get a finger-sized height (they were 20 px,
+     too small to tap without hitting the neighbor) */
+  @media (max-width:760px){
+    .flinks{gap:0 22px}
+    .flinks a{display:inline-flex; align-items:center; min-height:44px}
+  }
   /* GitHub: symbol + text, understated, in the link color */
   .gh-link{display:inline-flex; align-items:center; gap:7px; color:var(--ink-dim); text-decoration:none}
   .gh-link:hover{color:var(--accent)}
@@ -602,7 +619,11 @@
   <section class="wrap" id="desktop">
     <p class="eyebrow" data-en="The desktop">La scrivania</p>
     <h2 data-en="Black, coherent, yours.">Nera, coerente, tua.</h2>
+<<<<<<< Updated upstream
     <div class="rows">
+=======
+    <div class="rows" id="desktop-rows">
+>>>>>>> Stashed changes
       <div class="row"><div class="k" data-en="One accent, everywhere">Un accento, ovunque</div><div class="v" data-en="Blue, red, green, purple, white or a custom color tints borders, bar, launcher, notifications and wallpaper together. Light and dark theme, one key away: SUPER + T, or one click in the Control Center.">Blu, rosso, verde, viola, bianco o un colore personalizzato tinge insieme bordi, barra, launcher, notifiche e sfondo. Tema chiaro e tema scuro a un tasto di distanza: SUPER + T, o un click nel Centro di controllo.</div></div>
       <div class="row"><div class="k" data-en="Windows &amp; workspaces">Finestre e spazi</div><div class="v" data-en="Wayland compositor (Hyprland): title bars with close, minimize, maximize; three workspaces; fluid animations that scale back automatically inside virtual machines.">Compositore Wayland (Hyprland): barre del titolo con chiudi, riduci, ingrandisci; tre spazi di lavoro; animazioni fluide che si alleggeriscono da sole nelle macchine virtuali.</div></div>
       <div class="row"><div class="k" data-en="Snap layouts">Layout finestre</div><div class="v" data-en="Super + Shift + Left or Right puts the window on one half of the screen, Up maximizes it, Down puts it back. Super + Z opens the layouts: halves, thirds, quarters, centered; click a zone and the window fills it.">Super + Maiusc + Sinistra o Destra mette la finestra su metà dello schermo, Su la ingrandisce, Giù la rimette com'era. Super + Z apre i layout: metà, terzi, quarti, al centro; fai click su una zona e la finestra la riempie.</div></div>
@@ -637,6 +658,7 @@
       <div class="row"><div class="k" data-en="Next to other systems">Accanto ad altri sistemi</div><div class="v" data-en="Installed alongside another Linux distribution or Windows, the boot menu finds them and lists them, with five seconds to choose. It uses its own EFI folder, so it never overwrites another system's boot files, and Secure Boot keeps working after installation. If a machine ever stops booting, the USB stick carries a repair tool that puts the boot menu back without touching partitions or data. And the installer checks its own work: if the boot loader did not make it to the disk, it stops and says why, instead of reporting success. The boot loader is installed from the USB stick itself, so the installation works with or without a network, also when started from the live session.">Installato accanto a un'altra distribuzione Linux o a Windows, il menu di avvio li trova e li elenca, con cinque secondi per scegliere. Usa una cartella EFI propria, quindi non sovrascrive l'avvio degli altri sistemi, e l'avvio sicuro continua a funzionare anche dopo l'installazione. Se un computer smette di avviarsi, la chiavetta porta con sé uno strumento che rimette a posto il menu senza toccare partizioni né dati. E l'installer controlla il proprio lavoro: se il programma di avvio non è arrivato sul disco, si ferma e spiega perché, invece di dire che è andato tutto bene. Il programma di avvio si installa dalla chiavetta stessa, quindi l'installazione va a buon fine con o senza rete, anche partendo dalla sessione dal vivo.</div></div>
       <div class="row"><div class="k" data-en="Ready to work">Pronto all'uso</div><div class="v" data-en="Printing (CUPS) with automatic detection of network and USB printers. Removable drives and network shares mounted automatically.">Stampa (CUPS) con rilevamento automatico di stampanti di rete e USB. Chiavette e cartelle di rete montate automaticamente.</div></div>
     </div>
+    <button class="more-rows" id="desktop-more" type="button" hidden aria-controls="desktop-rows" aria-expanded="false" data-en="Show all 33 features">Mostra tutte le 33 funzioni</button>
     <h3 class="wallpapers-title" data-en="Wallpapers">Sfondi</h3>
     <p class="wallpapers-note" data-en="Included in the system, one click away in Settings, Appearance. Or just ask ZETA: set the wallpaper to red waves.">Inclusi nel sistema, a un click in Impostazioni › Aspetto. Oppure chiedilo a ZETA: metti lo sfondo onde rosse.</p>
     <div class="wallpapers">
@@ -919,6 +941,10 @@
   // --- Reveal on scroll ---
   // Enabled only if the observer exists and the system does not ask for
   // reduced motion. The hero is excluded: the first screen is ready at once.
+  // Threshold 0: any visible pixel reveals the element. With a percentage, an
+  // element taller than the screen (the desktop feature list on a phone is
+  // about 7000 px) could never reach it and stayed invisible: an empty gap
+  // of several screens before the wallpapers.
   (function(){
     var reducedMotion = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
     if (reducedMotion || !("IntersectionObserver" in window)) return;
@@ -939,8 +965,25 @@
         v.target.classList.add("in-view");
         observer.unobserve(v.target);
       });
-    }, { threshold: 0.12, rootMargin: "0px 0px -6% 0px" });
+    }, { threshold: 0, rootMargin: "0px 0px -6% 0px" });
     targets.forEach(function(el){ observer.observe(el); });
+  })();
+
+  // --- Desktop features: the first 8 on phones, the rest on request ---
+  (function(){
+    var rows = document.getElementById("desktop-rows");
+    var more = document.getElementById("desktop-more");
+    if (!rows || !more || !window.matchMedia || !matchMedia("(max-width: 760px)").matches) return;
+    rows.classList.add("collapsed");
+    more.hidden = false;
+    more.addEventListener("click", function(){
+      rows.classList.remove("collapsed");
+      more.hidden = true;
+      more.setAttribute("aria-expanded", "true");
+      // the keyboard goes on from the first entry that was hidden
+      var next = rows.querySelectorAll(".row")[8];
+      if (next){ next.setAttribute("tabindex", "-1"); next.focus({preventScroll: true}); }
+    });
   })();
 
   // --- Address of the download files ---
