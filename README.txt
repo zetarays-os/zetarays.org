@@ -1,5 +1,5 @@
 ===============================================================================
- ZETA RAYS OS 2.5
+ ZETA RAYS OS 3.0
  A free, minimal operating system with local AI and security tools.
  https://zetarays.org   .   info@zetarays.org
 ===============================================================================
@@ -13,24 +13,80 @@
   7. ZETA, the AI
 
 
+NEW IN ZETA RAYS 3.0
+-------------------------------------------------------------------------------
+
+- Screenshots and screen recording: PRINT opens a toolbar (area, window,
+  full screen, recording, color picker, timer); SHIFT + PRINT captures the
+  screen, ALT + PRINT the active window, SUPER + SHIFT + S an area,
+  SUPER + SHIFT + R starts and stops a recording. Captures go to
+  Pictures/Screenshots and to the clipboard; the notification offers Edit,
+  Copy Text, Open Folder and Delete.
+- Clipboard history (SUPER + V) and emoji (SUPER + .), see section 6.
+- Night Light: warmer colors from sunset to sunrise (worked out offline from
+  the time zone), always, or at custom times. Settings > Displays and the
+  Control Center.
+- Control Center quick settings: Night Light, Do Not Disturb, Power Mode,
+  Screenshot, Record and Clipboard.
+- Snap layouts (SUPER + SHIFT + arrows, SUPER + Z) and Quick Look (SPACE on
+  a selected file), see section 6.
+- New Settings pages: Power & Battery, Keyboard & Mouse, Date & Time,
+  Accessibility, Storage, and Backup (personal files with Deja Dup, system
+  snapshots with Timeshift, optionally before every system update).
+- ZETA reads the screen ("what's on my screen?", "translate what I'm
+  looking at") and summarizes text, PDF and office files: right-click a
+  file in Files and choose "Ask ZETA to Summarize", or run
+  zeta summarize FILE. Everything is read on the computer.
+- New AI model for 8 GB computers and mini PCs: Granite 4.2 3B. Qwen3 4B
+  Instruct stays the model for 16 GB.
+- Purple accent color, and two new wallpapers: Rays and Purple logo.
+- From this version, ZETA RAYS updates come from their own signed package
+  source and appear in Settings > Software Update with the Debian ones.
+
+Upgrading from version 2.5, without reinstalling
+  Download the upgrade file for your computer from zetarays.org (Download
+  section), next to the images:
+    zetarays-3.0-upgrade-amd64.run    Intel and AMD PCs
+    zetarays-3.0-upgrade-arm64.run    Apple Silicon and ARM
+  Open a terminal in the folder of the file (amd64 shown here):
+    sudo bash zetarays-3.0-upgrade-amd64.run --dry-run
+        shows what would change, and changes nothing
+    sudo bash zetarays-3.0-upgrade-amd64.run
+        upgrades (it asks before starting), then offers to restart
+  Without a terminal: in Files, right-click the file > Properties >
+  Permissions, allow running it as a program, then double-click it and
+  choose Run. A terminal window shows the progress and the system asks for
+  the administrator password.
+  It checks the system first (version 2.5, architecture, free space, the
+  Debian servers) and changes nothing if a check fails. Every file it
+  replaces is saved in /var/backups/zeta-rays-2.5-DATE/. Your files, apps
+  and settings stay; a settings file you changed by hand is kept, and the
+  new version is written next to it as FILE.dpkg-dist. Running it again is
+  safe. To go back, run this and restart:
+    sudo bash /var/backups/zeta-rays-2.5-DATE/rollback.sh
+  The AI model is not in the file: the model you have keeps working, and
+  Settings > AI offers the new one with a Download button. Log:
+  /var/log/zeta-rays-upgrade.log.
+
+
 1. WHICH FILE TO DOWNLOAD
 -------------------------------------------------------------------------------
 
-  zetarays-2.5-amd64.iso    Intel and AMD PCs. This is the right file for
+  zetarays-3.0-amd64.iso    Intel and AMD PCs. This is the right file for
                             almost every desktop and laptop.
-                            7,384,301,568 bytes (7.38 GB)
+                            7,648,026,624 bytes (7.65 GB)
 
-  zetarays-2.5-arm64.iso    64-bit ARM machines and Apple Silicon Macs
+  zetarays-3.0-arm64.iso    64-bit ARM machines and Apple Silicon Macs
                             (with UTM or QEMU).
-                            7,387,635,712 bytes (7.39 GB)
+                            7,764,602,880 bytes (7.76 GB)
 
-  zetarays-2.5-amd64.ova    Ready-made VirtualBox machine for Intel and AMD
+  zetarays-3.0-amd64.ova    Ready-made VirtualBox machine for Intel and AMD
                             PCs. Import it and start it, nothing to install.
-                            7,642,716,672 bytes (7.64 GB)
+                            7,908,341,760 bytes (7.91 GB)
 
-  zetarays-2.5-arm64.ova    Ready-made VirtualBox machine for Apple Silicon
+  zetarays-3.0-arm64.ova    Ready-made VirtualBox machine for Apple Silicon
                             Macs (VirtualBox 7.2 or later).
-                            7,698,246,656 bytes (7.70 GB)
+                            8,024,264,192 bytes (8.02 GB)
 
 Use an ISO to install ZETA RAYS on a computer, or to try it from a USB stick
 without touching your disk. Use an OVA to try it inside a window, leaving your
@@ -47,23 +103,24 @@ system then uses them everywhere (see "Language and keyboard" in section 6).
 Always check that the file arrived intact. The SHA-256 checksum must match
 exactly.
 
-  arm64.iso   0751b1fcb28776b6a713dbda8dcf14becce84ff508ad7aa5aab29ca20aa97784
-  arm64.ova   77772018fc29f49e36b3a11eaa66b401b5e41dd0bf21d87d25c9a15557f10a4a
-  amd64.iso   e65d22a7c72004f8a7679fd3b230eac4888cc5b7b22cde438eb1b36c45f061d7
-  amd64.ova   e7d946a49352d0cff6fb9a7fc209bd46fe362f02171a8b07227617066c8cd6da
+  arm64.iso   7b107c2ef95f210c8842d68ebe371593ce8055d5fade9956cad4c566fa146f32
+  arm64.ova   b5be3a494d9727ccee9f37bbfdf706aafb865c14072e6647578e3c08306669c4
+  amd64.iso   649e33580b764b637725775f952f4a3b33c2286b92a5e731524aa558f2fe889f
+  amd64.ova   925f4504f34346328372d9aceb6b8374e3043ce48280924f6f042ea40b8e5c4c
 
-The same checksums are in the SHA256SUMS file, next to the images.
+The same checksums, and those of the two upgrade files, are in the
+SHA256SUMS file, next to the images.
 
 How to check:
 
   Windows (PowerShell)
-      Get-FileHash .\zetarays-2.5-amd64.iso -Algorithm SHA256
+      Get-FileHash .\zetarays-3.0-amd64.iso -Algorithm SHA256
 
   macOS (Terminal)
-      shasum -a 256 zetarays-2.5-arm64.iso
+      shasum -a 256 zetarays-3.0-arm64.iso
 
   Linux (Terminal)
-      sha256sum zetarays-2.5-amd64.iso
+      sha256sum zetarays-3.0-amd64.iso
 
   All files at once, with SHA256SUMS in the same folder:
       sha256sum -c SHA256SUMS        (Linux)
@@ -198,7 +255,7 @@ password.
 
 A complete desktop, written for ZETA RAYS: bar, Dock, app launcher, Control
 Center, Files, Terminal, Monitor, Security, Settings, file search. Technical
-base: Debian 13 (trixie), Linux kernel 6.12.113, Hyprland 0.55 with the
+base: Debian 13 (trixie), Linux kernel 6.12.117, Hyprland 0.55 with the
 official fix for a crash with open menus.
 
 Security and analysis tools, for professional and educational use, with a
@@ -249,8 +306,8 @@ Fonts
 Account
   Settings > Account shows your name and user and lets you choose your
   picture: a .jpg or .png photo (cut to a circle from the centre, sharp at
-  every size) or a plain circle in one of the four system colors (blue,
-  red, green, white). By default the circle has the accent color and
+  every size) or a plain circle in one of the five system colors (blue,
+  red, green, purple, white). By default the circle has the accent color and
   changes with it. It appears in the account and power menu (click it to
   open Settings > Account), on the lock screen and at login.
 
@@ -275,6 +332,25 @@ Windows always within reach
   with its title bar and buttons inside the screen, above the bar.
   SUPER + SHIFT + W (or zeta-windows recover) brings every window back
   at once. Menus of the bar always open inside the screen.
+
+Snap layouts
+  SUPER + SHIFT + LEFT or RIGHT puts the active window on the left or right
+  half of its screen, SUPER + SHIFT + UP maximizes it, SUPER + SHIFT + DOWN
+  puts it back where it was. SUPER + Z opens Snap Layouts: halves, thirds
+  (one third and two thirds, or three columns), quarters, centered; click a
+  zone and the window fills it. Zones stay above the bar, with a small gap
+  between windows. A tiled window (SUPER + SHIFT + V) moves left or right in
+  the tiled layout. From a terminal: zeta-snap left, zeta-snap top-right,
+  zeta-snap restore (zeta-snap --help lists every zone).
+
+Quick Look
+  Select a file in Files or on the Desktop and press SPACE: a preview opens
+  at once. Pictures, the first page of a PDF, text and code (the first
+  200 KB), a still frame of a video, the number of items and the size of a
+  folder. SPACE or ESC closes it, ENTER or the button at the bottom opens
+  the file with its app. Also in the right-click menu ("Quick Look"), and
+  from a terminal: zeta-quicklook FILE. In Files, SPACE still types a space
+  in the location bar, the search field and when renaming.
 
 Instant menus
   The menus of the bar (the ZETA RAYS logo, search, network, sound, clock,
@@ -349,6 +425,20 @@ Text out of pictures (OCR, done on your computer)
   straight to the clipboard. For files, right-click an image or a PDF and
   choose "Copy Text from Image". Text is read in the system language and
   in English.
+
+Clipboard history and emoji
+  SUPER + V shows what you copied recently, text and images: click an
+  entry (or press Enter) and it is pasted where you were typing; Delete
+  removes one, "Clear all" empties the list. Passwords copied from a
+  password manager are never saved, and the history can be turned off in
+  the same panel. SUPER + . (period) opens the emoji: search them by name,
+  a click inserts one. Floating or tiled window is now SUPER + SHIFT + V.
+
+Do Not Disturb
+  From the Control Center or Settings > Notifications: notifications stop
+  appearing (critical ones, like a battery almost empty, still do) and a
+  bell in the bar shows it is on. A click on the bell lists the recent
+  notifications, the ones you missed included.
 
 Never stuck
   Ctrl + Alt + Esc turns the pointer into a red crosshair: click the window
@@ -488,7 +578,7 @@ Local AI only
   ZETA answers only with AI models that run on your computer, through
   Ollama: no account, no API key, no online AI service, nothing you write or
   say is sent anywhere. It also works without internet. The image includes
-  two models: Granite 4.0 Micro (fast and light: low-power Intel N100/N150
+  two models: Granite 4.2 3B (fast and light: low-power Intel N100/N150
   mini PCs and 8 GB computers) and Qwen3 4B Instruct (the best Italian:
   16 GB computers). ZETA picks the one that suits the computer and Settings >
   AI shows the choice, offers the model recommended for this computer when
@@ -703,7 +793,7 @@ Anything else
     tested in virtual machines only.
   - The local models run on the computer's processor: the first words come
     in a second or two, then the reply is written at the speed of the
-    processor. On an Intel N100 ZETA uses Granite 4.0 Micro, the faster of
+    processor. On an Intel N100 ZETA uses Granite 4.2 3B, the faster of
     the two included models (speeds on the N100 itself are estimates: the
     tests ran in virtual machines).
     Their knowledge stops at their training date: current facts come from a

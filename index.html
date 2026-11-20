@@ -295,9 +295,10 @@
   .wallpaper a:hover figcaption span{color:var(--accent)}
   .wallpaper:hover{border-color:var(--line-2)}
   .wallpaper.featured{grid-column:1 / -1}
-  .wallpapers.logos{grid-template-columns:repeat(4,1fr)}
+  .wallpapers.logos{grid-template-columns:repeat(5,1fr)}
   .wallpapers.logos img{aspect-ratio:16/9}
-  @media (max-width:760px){ .wallpapers.logos{grid-template-columns:repeat(2,1fr)} }
+  @media (max-width:760px){ .wallpapers.logos{grid-template-columns:repeat(3,1fr)} }
+  @media (max-width:560px){ .wallpapers.logos{grid-template-columns:repeat(2,1fr)} }
   @media (max-width:560px){ .wallpapers:not(.logos){grid-template-columns:1fr} }
 
   .tools{display:flex; flex-wrap:wrap; gap:8px; margin-top:24px}
@@ -327,6 +328,14 @@
   .dl-links a.iso{background:var(--accent); color:var(--accent-ink); font-weight:500}
   .dl-links a.ova{border:1px solid var(--line-2); color:var(--ink)}
   .dl-links a.ova:hover{border-color:var(--accent); color:var(--accent)}
+  .dl-links a.run{border:1px solid var(--line-2); color:var(--ink)}
+  .dl-links a.run:hover{border-color:var(--accent); color:var(--accent)}
+  /* --- upgrade from the previous release --- */
+  .dl.upgrade{margin-top:16px}
+  .upgrade .steps{margin:16px 0 0; padding-left:20px; color:var(--ink-dim); font-size:14px; line-height:1.6}
+  .upgrade .steps li + li{margin-top:6px}
+  .upgrade code{font-family:var(--mono); font-size:12px; color:var(--accent); overflow-wrap:anywhere}
+  .upgrade .more{color:var(--ink-faint); font-size:13.5px; margin:12px 0 0; line-height:1.6}
   .creds{font-family:var(--mono); font-size:13px; color:var(--ink-dim); margin-top:26px; text-align:center}
   /* --- verifying the downloaded file --- */
   .verify{margin-top:26px; border:1px solid var(--line); border-radius:14px;
@@ -468,7 +477,7 @@
         Un sistema operativo libero e minimale: una scrivania nera e pulita, strumenti avanzati di sicurezza e pentest, e un'intelligenza artificiale locale, ZETA, che ti capisce e fa funzionare il computer per te.
       </p>
       <div class="hero-actions">
-        <a class="cta" href="#download" data-en="Download ZETA RAYS 2.5">Scarica ZETA RAYS 2.5</a>
+        <a class="cta" href="#download" data-en="Download ZETA RAYS 3.0">Scarica ZETA RAYS 3.0</a>
         <a class="btn-ghost" href="#zeta" data-en="Meet ZETA">Conosci ZETA</a>
         <a class="btn-support" href="https://www.paypal.com/pool/9sSHdLylmE?sr=wccr" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 21.2l-1.45-1.32C5.4 15.24 2 12.16 2 8.4 2 5.32 4.42 2.9 7.5 2.9c1.74 0 3.41.81 4.5 2.09A6 6 0 0 1 16.5 2.9C19.58 2.9 22 5.32 22 8.4c0 3.76-3.4 6.84-8.55 11.49z"/></svg><span data-en="Support">Support</span></a>
       </div>
@@ -477,6 +486,7 @@
         <button class="sw" data-accent="#3A8DFF" style="background:#3A8DFF" aria-pressed="true" aria-label="Blu" data-en-aria="Blue"></button>
         <button class="sw" data-accent="#C8102E" style="background:#C8102E" aria-pressed="false" aria-label="Rosso" data-en-aria="Red"></button>
         <button class="sw" data-accent="#4CC94A" style="background:#4CC94A" aria-pressed="false" aria-label="Verde" data-en-aria="Green"></button>
+        <button class="sw" data-accent="#7C3AED" style="background:#7C3AED" aria-pressed="false" aria-label="Viola" data-en-aria="Purple"></button>
         <button class="sw" data-accent="#FFFFFF" style="background:#FFFFFF" aria-pressed="false" aria-label="Bianco" data-en-aria="White"></button>
       </div>
     </div>
@@ -542,6 +552,14 @@
         <h3 data-en="Controlled and honest">Controllata e onesta</h3>
         <p data-en="Actions have risk levels; destructive ones ask first, ZETA never runs arbitrary commands or gets unrestricted administrator access, and every action is logged with passwords hidden. For current facts ZETA uses a verified reference with its date, or looks the question up on Wikipedia if you allow it; when it cannot verify, it says so instead of guessing.">Le azioni hanno livelli di rischio; quelle distruttive chiedono conferma, ZETA non esegue mai comandi arbitrari né ha accesso libero da amministratore, e ogni azione è registrata con le password nascoste. Per i fatti attuali ZETA usa un riferimento verificato con la sua data, oppure cerca la domanda su Wikipedia se lo permetti; quando non può verificare lo dice, invece di tirare a indovinare.</p>
       </div>
+      <div class="card">
+        <h3 data-en="It sees the screen, it reads your files">Vede lo schermo, legge i tuoi file</h3>
+        <p data-en="Ask &ldquo;what's on my screen?&rdquo; or &ldquo;translate what I'm looking at&rdquo;. In Files, right-click a text, a PDF or an office document and choose Ask ZETA to Summarize. The picture of the window and the file are read on your computer, and nothing is sent anywhere.">Chiedi «cosa c'è sullo schermo?» o «traduci quello che sto guardando». In File fai click con il tasto destro su un testo, un PDF o un documento d'ufficio e scegli Chiedi a ZETA di riassumere. L'immagine della finestra e il file vengono letti sul tuo computer, e nulla viene inviato altrove.</p>
+      </div>
+      <div class="card">
+        <h3 data-en="A model for every computer">Un modello per ogni computer</h3>
+        <p data-en="New in 3.0: Granite 4.2 3B, for computers with 8 GB and low-power mini PCs. It starts answering sooner and picks the right command more often than the model it replaces. Qwen3 4B Instruct, the best Italian, stays the choice with 16 GB. Both are in the image, and Settings › AI recommends the right one for your computer.">Novità della 3.0: Granite 4.2 3B, per i computer da 8 GB e i mini PC a basso consumo. Comincia a rispondere prima e sceglie più spesso il comando giusto rispetto al modello che sostituisce. Qwen3 4B Instruct, l'italiano migliore, resta la scelta con 16 GB. Sono entrambi nell'immagine, e Impostazioni › AI consiglia quello giusto per il tuo computer.</p>
+      </div>
     </div>
   </section>
 
@@ -585,8 +603,17 @@
     <p class="eyebrow" data-en="The desktop">La scrivania</p>
     <h2 data-en="Black, coherent, yours.">Nera, coerente, tua.</h2>
     <div class="rows">
-      <div class="row"><div class="k" data-en="One accent, everywhere">Un accento, ovunque</div><div class="v" data-en="Blue, red, green, white or a custom color tints borders, bar, launcher, notifications and wallpaper together. Light and dark theme, one key away: SUPER + T, or one click in the Control Center.">Blu, rosso, verde, bianco o un colore personalizzato tinge insieme bordi, barra, launcher, notifiche e sfondo. Tema chiaro e tema scuro a un tasto di distanza: SUPER + T, o un click nel Centro di controllo.</div></div>
+      <div class="row"><div class="k" data-en="One accent, everywhere">Un accento, ovunque</div><div class="v" data-en="Blue, red, green, purple, white or a custom color tints borders, bar, launcher, notifications and wallpaper together. Light and dark theme, one key away: SUPER + T, or one click in the Control Center.">Blu, rosso, verde, viola, bianco o un colore personalizzato tinge insieme bordi, barra, launcher, notifiche e sfondo. Tema chiaro e tema scuro a un tasto di distanza: SUPER + T, o un click nel Centro di controllo.</div></div>
       <div class="row"><div class="k" data-en="Windows &amp; workspaces">Finestre e spazi</div><div class="v" data-en="Wayland compositor (Hyprland): title bars with close, minimize, maximize; three workspaces; fluid animations that scale back automatically inside virtual machines.">Compositore Wayland (Hyprland): barre del titolo con chiudi, riduci, ingrandisci; tre spazi di lavoro; animazioni fluide che si alleggeriscono da sole nelle macchine virtuali.</div></div>
+      <div class="row"><div class="k" data-en="Snap layouts">Layout finestre</div><div class="v" data-en="Super + Shift + Left or Right puts the window on one half of the screen, Up maximizes it, Down puts it back. Super + Z opens the layouts: halves, thirds, quarters, centered; click a zone and the window fills it.">Super + Maiusc + Sinistra o Destra mette la finestra su metà dello schermo, Su la ingrandisce, Giù la rimette com'era. Super + Z apre i layout: metà, terzi, quarti, al centro; fai click su una zona e la finestra la riempie.</div></div>
+      <div class="row"><div class="k" data-en="Screenshots &amp; recording">Screenshot e registrazione</div><div class="v" data-en="Print opens a toolbar: area, window, full screen, record an area or the screen, pick a color, timer. Shift + Print captures the screen, Alt + Print the active window, Super + Shift + S an area, Super + Shift + R starts and stops a recording. Every capture is saved in Pictures › Screenshots and copied; its notification opens Edit (arrows, text, blur), Copy Text and Delete.">Stamp apre una barra: zona, finestra, schermo intero, registra una zona o lo schermo, preleva un colore, timer. Maiusc + Stamp cattura lo schermo, Alt + Stamp la finestra attiva, Super + Maiusc + S una zona, Super + Maiusc + R avvia e ferma una registrazione. Ogni cattura viene salvata in Immagini › Screenshots e copiata; dalla notifica: Modifica (frecce, testo, sfocatura), Copia testo ed Elimina.</div></div>
+      <div class="row"><div class="k" data-en="Clipboard &amp; emoji">Appunti ed emoji</div><div class="v" data-en="Super + V lists the last 100 things you copied, text and images, and pastes the one you pick. Passwords from password managers are never saved, and the history can be turned off. Super + . (period) inserts an emoji, with search.">Super + V elenca le ultime 100 cose che hai copiato, testi e immagini, e incolla quella che scegli. Le password dei gestori di password non vengono mai salvate, e la cronologia si può spegnere. Super + . (punto) inserisce un'emoji, con la ricerca.</div></div>
+      <div class="row"><div class="k" data-en="Quick Look">Anteprima rapida</div><div class="v" data-en="Select a file in Files or on the desktop and press Space: pictures, PDF, text, video and folders open in a preview at once. Space or Esc closes it, Enter opens the file.">Seleziona un file in File o sulla scrivania e premi Spazio: immagini, PDF, testo, video e cartelle si aprono subito in anteprima. Spazio o Esc la chiudono, Invio apre il file.</div></div>
+      <div class="row"><div class="k" data-en="Night Light">Luce notturna</div><div class="v" data-en="Warmer colors in the evening: from sunset to sunrise (worked out on the computer from your time zone), always, or at the times you choose, with a slider for the warmth. In Settings › Displays and in the Control Center.">Colori più caldi la sera: dal tramonto all'alba (calcolati sul computer dal fuso orario), sempre, oppure negli orari che scegli, con un cursore per la temperatura. In Impostazioni › Schermi e nel Centro di controllo.</div></div>
+      <div class="row"><div class="k" data-en="Quick settings">Impostazioni rapide</div><div class="v" data-en="The Control Center puts Night Light, Do Not Disturb, Power Mode, Screenshot, Record and Clipboard one click away. Do Not Disturb still lets critical notifications through and shows a bell in the bar: one click on it lists what you missed.">Il Centro di controllo mette a un click Luce notturna, Non disturbare, Modalità di alimentazione, Screenshot, Registra e Appunti. Non disturbare lascia passare le notifiche critiche e mostra una campanella nella barra: un click elenca quelle che ti sei perso.</div></div>
+      <div class="row"><div class="k" data-en="New in Settings">Novità nelle Impostazioni</div><div class="v" data-en="Power &amp; Battery (power mode, battery health, when the screen turns off, locks and sleeps, the power button), Keyboard &amp; Mouse, Date &amp; Time, Accessibility (screen reader, larger text, high contrast, zoom with Super + plus and minus, reduce motion) and Storage (what uses the space, and a cleanup). Settings opens faster: each page is built only when you open it.">Alimentazione e batteria (modalità di alimentazione, salute della batteria, quando lo schermo si spegne, si blocca e va in sospensione, il tasto di accensione), Tastiera e mouse, Data e ora, Accessibilità (lettore dello schermo, testo più grande, contrasto elevato, zoom con Super + più e meno, animazioni ridotte) e Archiviazione (che cosa occupa lo spazio, e la pulizia). Le Impostazioni si aprono prima: ogni pagina viene creata solo quando la apri.</div></div>
+      <div class="row"><div class="k" data-en="Backup">Backup</div><div class="v" data-en="Settings › Backup copies your personal files with Déjà Dup and takes system snapshots with Timeshift, if you want also before every system update: if an update goes wrong, you can bring the system back to how it was.">Impostazioni › Backup copia i tuoi file personali con Déjà Dup e crea istantanee del sistema con Timeshift, se vuoi anche prima di ogni aggiornamento: se un aggiornamento va storto, puoi riportare il sistema com'era.</div></div>
+      <div class="row"><div class="k" data-en="Updates without reinstalling">Aggiornamenti senza reinstallare</div><div class="v" data-en="Coming from 2.5? One file upgrades the system and keeps your files, apps and settings: see Download. From 3.0 the ZETA RAYS updates have their own signed package source and arrive in Software Update, like every other update.">Arrivi dalla 2.5? Un solo file aggiorna il sistema e conserva file, app e impostazioni: vedi Scarica. Dalla 3.0 gli aggiornamenti di ZETA RAYS hanno una propria fonte di pacchetti firmata e arrivano in Aggiornamento software, come tutti gli altri.</div></div>
       <div class="row"><div class="k" data-en="Files &amp; search">File e ricerca</div><div class="v" data-en="File manager with thumbnails for images, PDFs and video. Search that indexes file contents too: text from PDFs, and OCR from images in Italian and English.">Gestore file con anteprime di immagini, PDF e video. Ricerca che indicizza anche il contenuto dei file: testo dai PDF e OCR dalle immagini in italiano e inglese.</div></div>
       <div class="row"><div class="k" data-en="Opens everything">Apre tutto</div><div class="v" data-en="140+ file types: PDF, images (JPG, PNG, WEBP, HEIC, SVG…), audio &amp; video (MP4, MOV, AVI, MP3…), archives (ZIP, RAR, 7z, TAR…), text and documents.">Oltre 140 tipi di file: PDF, immagini (JPG, PNG, WEBP, HEIC, SVG…), audio e video (MP4, MOV, AVI, MP3…), archivi (ZIP, RAR, 7z, TAR…), testo e documenti.</div></div>
       <div class="row"><div class="k" data-en="Yours to arrange">Come vuoi tu</div><div class="v" data-en="Change the icon of any desktop shortcut with your own image: right-click it and choose Change Icon. The picture is copied into the system, so it stays even if you move the original. The text editor can have a white or a black page, independent of the desktop.">Cambia l'icona di un collegamento sulla scrivania con un'immagine tua: fai click con il tasto destro e scegli Cambia icona. L'immagine viene copiata nel sistema, quindi resta anche se sposti l'originale. L'editor di testo può avere la pagina bianca o nera, indipendente dalla scrivania.</div></div>
@@ -605,7 +632,6 @@
       <div class="row"><div class="k" data-en="Remote access">Accesso remoto</div><div class="v" data-en="SSH client and server, scp, sftp, sshfs and netcat are included. On an installed system the SSH server is on and accepts connections from your local network and from the internet, with your password (for the internet your router must forward port 22); in the live session and in the OVA it stays off until you turn it on. One switch in Settings turns it on or off, a second one limits it to your local network; from a terminal: sudo zeta-ssh on and off. Root cannot log in, repeated attempts from the same address are dropped, and every computer gets its own server keys. Your choice is kept after a restart. One active firewall, nftables; ufw is there too, off, with the rules for SSH and sharing already in place if you turn it on.">Client e server SSH, scp, sftp, sshfs e netcat sono inclusi. Sul sistema installato il server SSH è acceso e accetta connessioni dalla rete locale e da internet, con la tua password (da internet il router deve inoltrare la porta 22); nella sessione dal vivo e nella OVA resta spento finché non lo accendi. Un interruttore nelle Impostazioni lo accende o lo spegne, un secondo lo limita alla sola rete locale; da terminale: sudo zeta-ssh on e off. Root non può entrare, i tentativi ripetuti dallo stesso indirizzo vengono scartati e ogni computer ha le sue chiavi. La scelta resta dopo il riavvio. Un solo firewall attivo, nftables; c'è anche ufw, spento, con le regole per SSH e condivisione già pronte se lo accendi.</div></div>
       <div class="row"><div class="k" data-en="Mail">Posta</div><div class="v" data-en="Mozilla Thunderbird, one click from the dock, in your language. A dot tells you it is open.">Mozilla Thunderbird, a un click dal dock, in italiano. Un puntino ti dice che è aperta.</div></div>
       <div class="row"><div class="k" data-en="A real terminal">Un terminale vero</div><div class="v" data-en="Tabs, splits, bash, zsh and fish. Sessions that survive closing the window, a searchable history of every command with folder and result, and no password ever saved in it.">Schede, divisioni, bash, zsh e fish. Sessioni che sopravvivono alla chiusura della finestra, la cronologia di ogni comando con cartella ed esito, cercabile, e nessuna password mai salvata.</div></div>
-      <div class="row"><div class="k" data-en="Keys that stay yours">Chiavi che restano tue</div><div class="v" data-en="The keys of online AI services are encrypted by the system: only your user, only on your computer, can read them.">Le chiavi dei servizi AI in rete sono cifrate dal sistema: le legge solo il tuo utente, solo sul tuo computer.</div></div>
       <div class="row"><div class="k" data-en="A desktop that stays up">Un desktop che non cade</div><div class="v" data-en="Force-closing a program while one of its menus was open could bring down the whole desktop, a known bug of Hyprland 0.55. ZETA RAYS ships Hyprland with the official fix, and if the desktop ever crashes anyway it comes back by itself in a few seconds, with your settings.">Chiudere di colpo un programma che aveva un menu aperto poteva far cadere tutto il desktop, un difetto noto di Hyprland 0.55. ZETA RAYS usa Hyprland con la correzione ufficiale, e se il desktop dovesse cadere comunque si rialza da solo in pochi secondi, con le tue impostazioni.</div></div>
       <div class="row"><div class="k" data-en="Text out of pictures">Il testo dalle foto</div><div class="v" data-en="Super + Shift + T and drag over any part of the screen, a web page, a photo, a paused video: the text inside goes straight to the clipboard. Right-click an image or a PDF to do the same with a file. Italian and English, all on your computer.">Super + Maiusc + T e trascini su una zona qualsiasi dello schermo, una pagina web, una foto, un video in pausa: il testo che contiene finisce subito negli appunti. Fai click con il tasto destro su un'immagine o un PDF per fare lo stesso con un file. Italiano e inglese, tutto sul tuo computer.</div></div>
       <div class="row"><div class="k" data-en="Next to other systems">Accanto ad altri sistemi</div><div class="v" data-en="Installed alongside another Linux distribution or Windows, the boot menu finds them and lists them, with five seconds to choose. It uses its own EFI folder, so it never overwrites another system's boot files, and Secure Boot keeps working after installation. If a machine ever stops booting, the USB stick carries a repair tool that puts the boot menu back without touching partitions or data. And the installer checks its own work: if the boot loader did not make it to the disk, it stops and says why, instead of reporting success. The boot loader is installed from the USB stick itself, so the installation works with or without a network, also when started from the live session.">Installato accanto a un'altra distribuzione Linux o a Windows, il menu di avvio li trova e li elenca, con cinque secondi per scegliere. Usa una cartella EFI propria, quindi non sovrascrive l'avvio degli altri sistemi, e l'avvio sicuro continua a funzionare anche dopo l'installazione. Se un computer smette di avviarsi, la chiavetta porta con sé uno strumento che rimette a posto il menu senza toccare partizioni né dati. E l'installer controlla il proprio lavoro: se il programma di avvio non è arrivato sul disco, si ferma e spiega perché, invece di dire che è andato tutto bene. Il programma di avvio si installa dalla chiavetta stessa, quindi l'installazione va a buon fine con o senza rete, anche partendo dalla sessione dal vivo.</div></div>
@@ -619,10 +645,12 @@
       <figure class="wallpaper"><a href="wallpapers/zeta-green-circuits.jpg" download><img src="wallpapers/thumbnails/zeta-green-circuits.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Sfondo ZETA RAYS: Circuiti verdi" data-en-alt="ZETA RAYS wallpaper: Green circuits"><figcaption><b data-en="Green circuits">Circuiti verdi</b><span data-en="Download">Scarica</span></figcaption></a></figure>
       <figure class="wallpaper"><a href="wallpapers/zeta-red-waves.jpg" download><img src="wallpapers/thumbnails/zeta-red-waves.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Sfondo ZETA RAYS: Onde rosse" data-en-alt="ZETA RAYS wallpaper: Red waves"><figcaption><b data-en="Red waves">Onde rosse</b><span data-en="Download">Scarica</span></figcaption></a></figure>
       <figure class="wallpaper"><a href="wallpapers/zeta-terminal.jpg" download><img src="wallpapers/thumbnails/zeta-terminal.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Sfondo ZETA RAYS: Terminale" data-en-alt="ZETA RAYS wallpaper: Terminal"><figcaption><b data-en="Terminal">Terminale</b><span data-en="Download">Scarica</span></figcaption></a></figure>
+      <figure class="wallpaper featured"><a href="wallpapers/zeta-rays.jpg" download><img src="wallpapers/thumbnails/zeta-rays.jpg" width="1600" height="900" loading="lazy" decoding="async" alt="Sfondo ZETA RAYS: Raggi" data-en-alt="ZETA RAYS wallpaper: Rays"><figcaption><b data-en="Rays">Raggi</b><span data-en="Download">Scarica</span></figcaption></a></figure>
     </div>
     <div class="wallpapers logos">
       <figure class="wallpaper"><a href="wallpapers/zeta-blue.jpg" download><img src="wallpapers/thumbnails/zeta-blue.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Sfondo ZETA RAYS: Logo blu" data-en-alt="ZETA RAYS wallpaper: Blue logo"><figcaption><b data-en="Blue logo">Logo blu</b><span data-en="Download">Scarica</span></figcaption></a></figure>
       <figure class="wallpaper"><a href="wallpapers/zeta-green.jpg" download><img src="wallpapers/thumbnails/zeta-green.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Sfondo ZETA RAYS: Logo verde" data-en-alt="ZETA RAYS wallpaper: Green logo"><figcaption><b data-en="Green logo">Logo verde</b><span data-en="Download">Scarica</span></figcaption></a></figure>
+      <figure class="wallpaper"><a href="wallpapers/zeta-purple.jpg" download><img src="wallpapers/thumbnails/zeta-purple.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Sfondo ZETA RAYS: Logo viola" data-en-alt="ZETA RAYS wallpaper: Purple logo"><figcaption><b data-en="Purple logo">Logo viola</b><span data-en="Download">Scarica</span></figcaption></a></figure>
       <figure class="wallpaper"><a href="wallpapers/zeta-red.jpg" download><img src="wallpapers/thumbnails/zeta-red.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Sfondo ZETA RAYS: Logo rosso" data-en-alt="ZETA RAYS wallpaper: Red logo"><figcaption><b data-en="Red logo">Logo rosso</b><span data-en="Download">Scarica</span></figcaption></a></figure>
       <figure class="wallpaper"><a href="wallpapers/zeta-white.jpg" download><img src="wallpapers/thumbnails/zeta-white.jpg" width="800" height="450" loading="lazy" decoding="async" alt="Sfondo ZETA RAYS: Logo bianco" data-en-alt="ZETA RAYS wallpaper: White logo"><figcaption><b data-en="White logo">Logo bianco</b><span data-en="Download">Scarica</span></figcaption></a></figure>
     </div>
@@ -630,10 +658,10 @@
 
   <!-- DOWNLOAD -->
   <section class="wrap" id="download">
-    <p class="eyebrow" data-en="Download · version 2.5">Scarica · versione 2.5</p>
+    <p class="eyebrow" data-en="Download · version 3.0">Scarica · versione 3.0</p>
     <h2 data-en="Choose your machine.">Scegli la tua macchina.</h2>
-    <p class="lead" data-en="ISO to install on a computer, OVA to import into VirtualBox. Each image includes the local AI model. The system runs on 8 GB of RAM; give a virtual machine at least 8 GB so ZETA can load the model (with 16 GB it stays ready).">
-      ISO per installare su un computer, OVA da importare in VirtualBox. Ogni immagine include il modello AI locale. Il sistema funziona con 8 GB di RAM; dai a una macchina virtuale almeno 8 GB perché ZETA possa caricare il modello (con 16 GB resta pronto).
+    <p class="lead" data-en="ISO to install on a computer, OVA to import into VirtualBox. Each image includes the local AI models. The system runs on 8 GB of RAM; give a virtual machine at least 8 GB so ZETA can load the model (with 16 GB it stays ready).">
+      ISO per installare su un computer, OVA da importare in VirtualBox. Ogni immagine include i modelli AI locali. Il sistema funziona con 8 GB di RAM; dai a una macchina virtuale almeno 8 GB perché ZETA possa caricare il modello (con 16 GB resta pronto).
     </p>
     <!-- The four images live on download.zetarays.org, each in its own
          folder (releases/<version>/<architecture>/<iso|ova>/): the full addresses
@@ -646,8 +674,8 @@
         <h3 data-en="Intel / AMD PC">PC Intel / AMD</h3>
         <p class="desc" data-en="For most desktops and laptops with an x86-64 processor.">Per la maggior parte dei computer fissi e portatili con processore x86-64.</p>
         <div class="dl-links">
-          <a class="iso" href="https://download.zetarays.org/releases/2.5/amd64/iso/zetarays-2.5-amd64.iso" download data-en="ISO · 7.4 GB">ISO · 7,4 GB</a>
-          <a class="ova" href="https://download.zetarays.org/releases/2.5/amd64/ova/zetarays-2.5-amd64.ova" download data-en="OVA · 7.6 GB">OVA · 7,6 GB</a>
+          <a class="iso" href="https://download.zetarays.org/releases/3.0/amd64/iso/zetarays-3.0-amd64.iso" download data-en="ISO · 7.6 GB">ISO · 7,6 GB</a>
+          <a class="ova" href="https://download.zetarays.org/releases/3.0/amd64/ova/zetarays-3.0-amd64.ova" download data-en="OVA · 7.9 GB">OVA · 7,9 GB</a>
         </div>
       </div>
       <div class="dl">
@@ -655,10 +683,28 @@
         <h3 data-en="Apple Silicon / ARM">Mac Apple Silicon / ARM</h3>
         <p class="desc" data-en="For Apple Silicon Macs and ARM64 machines (VirtualBox 7.2+).">Per Mac con chip Apple e macchine ARM64 (VirtualBox 7.2+).</p>
         <div class="dl-links">
-          <a class="iso" href="https://download.zetarays.org/releases/2.5/arm64/iso/zetarays-2.5-arm64.iso" download data-en="ISO · 7.4 GB">ISO · 7,4 GB</a>
-          <a class="ova" href="https://download.zetarays.org/releases/2.5/arm64/ova/zetarays-2.5-arm64.ova" download data-en="OVA · 7.7 GB">OVA · 7,7 GB</a>
+          <a class="iso" href="https://download.zetarays.org/releases/3.0/arm64/iso/zetarays-3.0-arm64.iso" download data-en="ISO · 7.8 GB">ISO · 7,8 GB</a>
+          <a class="ova" href="https://download.zetarays.org/releases/3.0/arm64/ova/zetarays-3.0-arm64.ova" download data-en="OVA · 8.0 GB">OVA · 8,0 GB</a>
         </div>
       </div>
+    </div>
+    <!-- In-place upgrade from 2.5: one file per architecture, next to the
+         images (releases/<version>/<architecture>/upgrade/). Sizes and
+         checksums are filled in at release by tools/sync-site.sh. -->
+    <div class="dl upgrade" id="upgrade">
+      <span class="arch" data-en="Upgrade from 2.5">Aggiornamento dalla 2.5</span>
+      <h3 data-en="Already on 2.5? Upgrade without reinstalling.">Hai già la 2.5? Aggiorna senza reinstallare.</h3>
+      <p class="desc" data-en="One file per architecture. It checks the system first, saves every file it replaces together with a way back, then installs the new packages and the new version: your files, apps and settings stay.">Un file per architettura. Prima controlla il sistema, salva ogni file che sostituisce insieme a un modo per tornare indietro, poi installa i nuovi pacchetti e la nuova versione: file, app e impostazioni restano.</p>
+      <div class="dl-links">
+        <a class="run" href="https://download.zetarays.org/releases/3.0/amd64/upgrade/zetarays-3.0-upgrade-amd64.run" download data-en="amd64 · 32 MB">amd64 · 32 MB</a>
+        <a class="run" href="https://download.zetarays.org/releases/3.0/arm64/upgrade/zetarays-3.0-upgrade-arm64.run" download data-en="arm64 · 24 MB">arm64 · 24 MB</a>
+      </div>
+      <ol class="steps">
+        <li data-en="Download the file for your computer: amd64 for Intel and AMD PCs, arm64 for Apple Silicon and ARM.">Scarica il file per il tuo computer: amd64 per i PC Intel e AMD, arm64 per Apple Silicon e ARM.</li>
+        <li data-en="Open a terminal in the folder of the file and see what would change, without changing anything: <code>sudo bash zetarays-3.0-upgrade-amd64.run --dry-run</code>">Apri un terminale nella cartella del file e guarda che cosa cambierebbe, senza cambiare nulla: <code>sudo bash zetarays-3.0-upgrade-amd64.run --dry-run</code></li>
+        <li data-en="Upgrade, then restart when it asks: <code>sudo bash zetarays-3.0-upgrade-amd64.run</code>">Aggiorna, poi riavvia quando te lo chiede: <code>sudo bash zetarays-3.0-upgrade-amd64.run</code></li>
+      </ol>
+      <p class="more" data-en="On arm64 the file name ends in arm64.run. Without a terminal: in Files, right-click the file, Properties, Permissions, allow running it as a program, then double-click it and choose Run. A backup of every replaced file and a rollback.sh stay in /var/backups.">Su arm64 il nome del file finisce con arm64.run. Senza terminale: in File fai click con il tasto destro sul file, Proprietà, Permessi, permetti di eseguirlo come programma, poi fai doppio click e scegli Esegui. Una copia di ogni file sostituito e un rollback.sh restano in /var/backups.</p>
     </div>
     <details class="verify">
       <summary data-en="Verify your download (SHA-256)">Verifica il file scaricato (SHA-256)</summary>
@@ -667,10 +713,12 @@
           Dopo il download controlla che il file sia arrivato intero. Il codice qui sotto deve corrispondere esattamente. Su Windows: <code>Get-FileHash .\file.iso -Algorithm SHA256</code> · su macOS: <code>shasum -a 256 file.iso</code> · su Linux: <code>sha256sum file.iso</code>. Se non corrisponde il file è incompleto: scaricalo di nuovo e non installarlo.
         </p>
         <table>
-          <tr><td class="f">amd64.iso</td><td class="h">e65d22a7c72004f8a7679fd3b230eac4888cc5b7b22cde438eb1b36c45f061d7</td></tr>
-          <tr><td class="f">amd64.ova</td><td class="h">e7d946a49352d0cff6fb9a7fc209bd46fe362f02171a8b07227617066c8cd6da</td></tr>
-          <tr><td class="f">arm64.iso</td><td class="h">0751b1fcb28776b6a713dbda8dcf14becce84ff508ad7aa5aab29ca20aa97784</td></tr>
-          <tr><td class="f">arm64.ova</td><td class="h">77772018fc29f49e36b3a11eaa66b401b5e41dd0bf21d87d25c9a15557f10a4a</td></tr>
+          <tr><td class="f">amd64.iso</td><td class="h">649e33580b764b637725775f952f4a3b33c2286b92a5e731524aa558f2fe889f</td></tr>
+          <tr><td class="f">amd64.ova</td><td class="h">925f4504f34346328372d9aceb6b8374e3043ce48280924f6f042ea40b8e5c4c</td></tr>
+          <tr><td class="f">arm64.iso</td><td class="h">7b107c2ef95f210c8842d68ebe371593ce8055d5fade9956cad4c566fa146f32</td></tr>
+          <tr><td class="f">arm64.ova</td><td class="h">b5be3a494d9727ccee9f37bbfdf706aafb865c14072e6647578e3c08306669c4</td></tr>
+          <tr><td class="f">upgrade-amd64.run</td><td class="h">08e104914591881c97b6759aea566ffd88e140a508639201883ff0000b05c32b</td></tr>
+          <tr><td class="f">upgrade-arm64.run</td><td class="h">2aebf85bd33c8ca2b7c30d3818f1fc0aee34c9b1abbcc91fe0d6f50aa4259bb4</td></tr>
         </table>
         <p style="margin:14px 0 0" data-en="The same codes are in <a class=&quot;sums&quot; href=&quot;SHA256SUMS&quot;>SHA256SUMS</a>, ready for <code>sha256sum -c SHA256SUMS</code>.">
           Gli stessi codici sono nel file <a class="sums" href="SHA256SUMS">SHA256SUMS</a>, pronto per <code>sha256sum -c SHA256SUMS</code>.
@@ -700,11 +748,11 @@
     <div class="rows">
       <div class="row"><div class="k" data-en="Foundations">Fondamenta</div><div class="v" data-en="Linux kernel (Linus Torvalds and the kernel community), Debian GNU/Linux (SPI, Inc.), the GNU tools (FSF), systemd.">Kernel Linux (Linus Torvalds e la comunità del kernel), Debian GNU/Linux (SPI, Inc.), gli strumenti GNU (FSF), systemd.</div></div>
       <div class="row"><div class="k" data-en="Desktop &amp; apps">Desktop e app</div><div class="v" data-en="Hyprland (compositor), Mozilla Firefox, Thunar (XFCE), GNOME apps (Text Editor, Calculator, Evince, Eye of GNOME, File Roller), mpv, SDDM (Qt/KDE), Calamares, Synaptic, Waybar.">Hyprland (compositore), Mozilla Firefox, Thunar (XFCE), applicazioni GNOME (Editor, Calcolatrice, Evince, Eye of GNOME, File Roller), mpv, SDDM (Qt/KDE), Calamares, Synaptic, Waybar.</div></div>
-      <div class="row"><div class="k" data-en="Intelligence">Intelligenza</div><div class="v" data-en="Ollama (MIT), Qwen3 4B Instruct (Qwen team, Alibaba Cloud, Apache-2.0), Granite 4.0 Micro (IBM, Apache-2.0), Kokoro-82M (Apache-2.0), Piper, Vosk, eSpeak NG, Tesseract OCR.">Ollama (MIT), Qwen3 4B Instruct (Qwen team, Alibaba Cloud, Apache-2.0), Granite 4.0 Micro (IBM, Apache-2.0), Kokoro-82M (Apache-2.0), Piper, Vosk, eSpeak NG, Tesseract OCR.</div></div>
+      <div class="row"><div class="k" data-en="Intelligence">Intelligenza</div><div class="v" data-en="Ollama (MIT), Qwen3 4B Instruct (Qwen team, Alibaba Cloud, Apache-2.0), Granite 4.2 3B (IBM, Apache-2.0), Kokoro-82M (Apache-2.0), Piper, Vosk, eSpeak NG, Tesseract OCR.">Ollama (MIT), Qwen3 4B Instruct (Qwen team, Alibaba Cloud, Apache-2.0), Granite 4.2 3B (IBM, Apache-2.0), Kokoro-82M (Apache-2.0), Piper, Vosk, eSpeak NG, Tesseract OCR.</div></div>
       <div class="row"><div class="k" data-en="Fonts">Caratteri</div><div class="v" data-en="Roboto (Google, Apache-2.0), JetBrains Mono (JetBrains, OFL-1.1).">Roboto (Google, Apache-2.0), JetBrains Mono (JetBrains, OFL-1.1).</div></div>
     </div>
-    <div class="note" data-en="<b>Local AI models.</b> Qwen3 4B Instruct (2507) by the Qwen team (Alibaba Cloud) and Granite 4.0 Micro by IBM are licensed under the Apache License 2.0. The full licenses ship inside the image.">
-      <b>Modelli AI locali.</b> Qwen3 4B Instruct (2507) del team Qwen (Alibaba Cloud) e Granite 4.0 Micro di IBM sono distribuiti con la licenza Apache 2.0. I testi completi delle licenze sono inclusi nell'immagine.
+    <div class="note" data-en="<b>Local AI models.</b> Qwen3 4B Instruct (2507) by the Qwen team (Alibaba Cloud) and Granite 4.2 3B by IBM are licensed under the Apache License 2.0. The full licenses ship inside the image.">
+      <b>Modelli AI locali.</b> Qwen3 4B Instruct (2507) del team Qwen (Alibaba Cloud) e Granite 4.2 3B di IBM sono distribuiti con la licenza Apache 2.0. I testi completi delle licenze sono inclusi nell'immagine.
     </div>
   </section>
 
@@ -732,8 +780,9 @@
     <div class="rows">
       <div class="row"><div class="k" data-en="IP map">Mappa degli IP</div><div class="v" data-en="Only while the Monitor's Map is open, IP locations are requested from an external service (ipwho.is) to draw them.">Solo mentre la Mappa del Monitor è aperta, le posizioni degli IP vengono chieste a un servizio esterno (ipwho.is) per disegnarle.</div></div>
       <div class="row"><div class="k" data-en="Current facts">Fatti attuali</div><div class="v" data-en="Only for questions about current facts (who holds an office, news, results) the question, shortened, is looked up on Wikipedia, so that the answer is current. Never the conversation. You can turn it off in Settings › AI.">Solo per le domande su fatti attuali (chi ricopre una carica, notizie, risultati) la domanda, abbreviata, viene cercata su Wikipedia, così la risposta è aggiornata. Mai la conversazione. Puoi spegnerlo in Impostazioni › AI.</div></div>
-          <div class="row"><div class="k" data-en="Updates">Aggiornamenti</div><div class="v" data-en="Like any system, it contacts the Debian repositories to install packages and updates when you ask; on an installed system security updates are installed automatically, and you can turn that off.">Come ogni sistema, contatta i repository Debian per installare pacchetti e aggiornamenti quando lo chiedi; su un sistema installato gli aggiornamenti di sicurezza si installano da soli, e puoi disattivarlo.</div></div>
+          <div class="row"><div class="k" data-en="Updates">Aggiornamenti</div><div class="v" data-en="Like any system, it contacts the Debian repositories to install packages and updates when you ask; on an installed system security updates are installed automatically, and you can turn that off. ZETA RAYS updates come from zetarays.org/apt in the same way: before each check the system only asks whether that address answers.">Come ogni sistema, contatta i repository Debian per installare pacchetti e aggiornamenti quando lo chiedi; su un sistema installato gli aggiornamenti di sicurezza si installano da soli, e puoi disattivarlo. Gli aggiornamenti di ZETA RAYS arrivano allo stesso modo da zetarays.org/apt: prima di ogni controllo il sistema chiede solo se quell'indirizzo risponde.</div></div>
       <div class="row"><div class="k" data-en="ZETA's memory">Memoria di ZETA</div><div class="v" data-en="Conversations and memories stay in one file on your computer, readable only by you. No online AI service exists in the system: nothing you write or say to ZETA is sent anywhere.">Conversazioni e ricordi restano in un solo file sul tuo computer, leggibile solo da te. Nel sistema non esistono servizi di AI online: niente di quello che scrivi o dici a ZETA viene inviato altrove.</div></div>
+      <div class="row"><div class="k" data-en="Screen and clipboard">Schermo e appunti</div><div class="v" data-en="&ldquo;What's on my screen?&rdquo;, Ask ZETA to Summarize and text recognition work on the computer: the picture of the window is deleted at once. The clipboard history stays in your home folder, readable only by you, and passwords are never saved in it. Screenshots and recordings are saved only where you see them.">«Cosa c'è sullo schermo?», Chiedi a ZETA di riassumere e il riconoscimento del testo funzionano sul computer: l'immagine della finestra viene cancellata subito. La cronologia degli appunti resta nella tua cartella personale, leggibile solo da te, e le password non ci vengono mai salvate. Screenshot e registrazioni vengono salvati solo dove li vedi.</div></div>
       <div class="row"><div class="k" data-en="Verifiable">Verificabile</div><div class="v" data-en="The firewall is on by default, the Monitor shows every open connection, and the code is free: you can check what is written here yourself.">Il firewall è attivo di default, il Monitor mostra ogni connessione aperta, e il codice è libero: puoi verificare tu stesso quanto è scritto qui.</div></div>
     </div>
   </section>
@@ -897,7 +946,7 @@
   // --- Address of the download files ---
   // Each image is over three gigabytes: when they live on external storage
   // (Cloudflare R2) the links must point there. The address is written only
-  // once, in the grid's data-base attribute: here the four links and the
+  // once, in the grid's data-base attribute: here the image and upgrade links and the
   // checksum file link are rewritten accordingly. If the attribute is empty,
   // or this piece of JavaScript does not run, the HTML links stay and keep
   // working. It is also called again after a language switch: the
@@ -909,7 +958,8 @@
     var base = (grid.getAttribute("data-base") || "").trim();
     if (!base) return;
     if (base.charAt(base.length - 1) !== "/") base += "/";
-    var link = [].slice.call(grid.querySelectorAll("a[href$='.iso'], a[href$='.ova']"));
+    var link = [].slice.call(document.querySelectorAll(
+        "#download a[href$='.iso'], #download a[href$='.ova'], #download a[href$='.run']"));
     var sums = document.querySelector(".verify a.sums");
     if (sums) link.push(sums);
     // the README also sits next to the images
